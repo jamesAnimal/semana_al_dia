@@ -7,7 +7,17 @@ La mantienen varias personas, cada una con su propio agente (Claude Code, Gemini
 ## Estructura
 
 ```
-index.html          diseño y lógica. NO tocar salvo que te lo pidan explícitamente.
+index.html          estructura de la página y orden de los <script>.
+css/estilos.css     diseño, colores y temas.
+js/                 lógica. Un archivo por tema, se cargan en el orden de index.html:
+  datos.js            junta data/*.js en DATA
+  util.js             texto, fechas, semana actual e íconos
+  eventos.js          clases recurrentes, entregas y cuenta regresiva
+  mascota.js          la mascota y sus frases
+  componentes.js      chips, links y alertas que usan varias vistas
+  calendario.js       calendario chico del inicio
+  vistas/<pestaña>.js una vista por pestaña (inicio, ramos, clases, noticias, recursos, carrera)
+  app.js              pestañas, temas, clics y arranque (va al final)
 assets/mascota.webp la mascota (pájaro azul con polerón "it works on my machine").
 data/general.js     bimestre, feriados, noticias generales, recursos, software, talleres, malla, frases de la mascota.
 data/cbbdd.js       ramo r1 · Consulta de Bases de Datos
@@ -18,6 +28,8 @@ data/cloud.js       ramo r3 · Introducción al Cloud Computing
 - `data/general.js` crea `window.DATA`. Cada archivo de ramo hace `DATA.ramos.push({...})` con todo lo del ramo: `secciones`, `evaluaciones`, `recursos`, `conceptos`, `semanas`, `eventos` y `noticias`.
 - `index.html` junta todo al cargar. El orden de los `<script src="data/...">` es el orden de los ramos.
 - Para actualizar contenido **edita solo `data/`**. Un archivo por ramo evita conflictos de Git entre personas.
+- `index.html`, `css/` y `js/` son diseño y lógica: **NO los toques salvo que te lo pidan explícitamente**.
+- Los `js/` son scripts normales (no módulos) para que la página funcione también abriendo `index.html` con doble clic. Comparten variables globales, así que el orden de los `<script>` importa.
 - El `id` del ramo (`r1`, `r2`, `r3`) define su color en el CSS. No lo cambies.
 - Ramo nuevo: crea `data/<ramo>.js` con un id libre (`r1`–`r3` ya existen; para un cuarto ramo, el CSS necesita `--r4`, así que pídelo antes).
 

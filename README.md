@@ -29,7 +29,9 @@ Para no pisarse: avisen en el grupo antes de editar y, si pueden, repártanse lo
 
 | Archivo | Qué tiene |
 |---|---|
-| `index.html` | Diseño y lógica (casi nunca se toca) |
+| `index.html` | Estructura de la página (casi nunca se toca) |
+| `css/estilos.css` | Diseño y temas de colores |
+| `js/` | Lógica, un archivo por tema y una vista por pestaña en `js/vistas/` |
 | `data/general.js` | Bimestre, feriados, noticias generales, recursos, malla, frases de la mascota |
 | `data/cbbdd.js` · `etica.js` · `cloud.js` | Todo lo de cada ramo |
 | `assets/mascota.webp` | La mascota |
