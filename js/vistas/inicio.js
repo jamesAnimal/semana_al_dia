@@ -9,7 +9,7 @@ function vInicio(){
   <section class="hero">
     ${catCard('inicio')}
     ${nd ? `<div class="cd-card"><div><span class="eyebrow">${entregasDelDia(nd).length > 1 ? 'Próximas entregas' : 'Próxima entrega'}</span><h2 style="margin-top:4px">${DOWL[nd.d.getDay()]} ${ddmm(nd.d)} · ${hhmm(nd.d)}</h2>
-      <div class="cd-list">${entregasDelDia(nd).map(e => `${ramoChip(e.ramo)}<span>${esc(e.titulo.replace(' '+ramoById(e.ramo)?.corto, ''))}</span>`).join('')}</div></div>${tiles(nd.d)}</div>`
+      <div class="cd-list">${entregasDelDia(nd).map(e => `${ramoChip(e.ramo)}<span>${esc(e.titulo.replace(' '+ramoById(e.ramo)?.corto, ''))} ${modoChip(modoDe(e))}</span>`).join('')}</div></div>${tiles(nd.d)}</div>`
           : `<div class="cd-card calm"><span class="eyebrow">Próximas entregas</span><h2>Nada pendiente</h2><p class="small muted">Disfruta mientras dure.</p></div>`}
   </section>
   ${al.length?`<section class="alerts">${alertasHead()}${al.map(x => `<div class="alert"><span class="ico">${icon('alert')}</span><div>${ramoChip(x.id)} ${esc(x.a)}</div></div>`).join('')}</section>`:''}

@@ -11,7 +11,7 @@ function vRamo(id){
   const shade = i => `color-mix(in srgb, ${col} ${100 - i*12}%, var(--surface))`;
   return `
   <section class="banner ${id}"><span class="ricon">${icon(r.icono)}</span>
-    <div class="grow"><span class="eyebrow" style="color:inherit;opacity:.85">${esc(r.sigla)} · semana ${SEM}</span><h1>${esc(r.nombre)}</h1>
+    <div class="grow"><span class="eyebrow" style="color:inherit;opacity:.85">Semana ${SEM}</span><h1>${esc(r.nombre)}</h1>
     <div class="sched">${r.secciones.map(sc => `<span>${sc.dia?DOWL[sc.dia].slice(0,3)+' '+sc.hora:'????'} · ${esc(sc.profe.split(' ')[0])}${sc.seccion&&sc.seccion!=='????'?' '+esc(sc.seccion):''}</span>`).join('') || '<span>Profe y horario: ????</span>'}</div></div>
   </section>
   ${s?`
@@ -39,7 +39,7 @@ function vRamo(id){
     <div class="panel"><h2>Clases de la semana</h2><div class="agenda">${EVENTS.filter(e => e.ramo===id && e.tipo==='clase' && weekOf(e.d)===SEM).map(c => `<div class="ag"><span class="when"><b>${c.d.getDate()}</b><span>${DOW[c.d.getDay()]} ${hhmm(c.d)}</span></span><span class="grow"><b>${esc(c.puntual ? c.titulo : c.profe)}</b><br><span class="small muted">${c.puntual ? esc(c.profe) : 'Sección ' + esc(c.seccion||'????')}</span></span>${c.d < NOW ? chip(null,'Ya pasó') : link('Entrar', c.link, 'video')}</div>`).join('') || '<div class="empty">Horario: ????</div>'}</div></div>
   </section>`:`<div class="empty">Todavía no hay material de la semana ${SEM}.</div>`}
   <section class="panel"><h2>Evaluaciones del bimestre</h2>${r.experiencias?`<ul class="clean small">${r.experiencias.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`:''}
-    <div class="tline"><div class="tline-in">${r.evaluaciones.map(e => { const t = /EFT/.test(e.n)?'eft':/Sumativa/.test(e.n)?'sum':''; return `<div class="node ${t} ${e.sem<CUR?'past':''} ${e.sem===CUR?'cur':''}" title="${esc(e.n)}${e.entrega?' · '+ddmm(dt(e.entrega)):''}"><span class="c">${e.sem<CUR?'✓':e.sem}</span><span class="l">${esc(e.n.replace('Formativa','Form.').replace('Sumativa','Sum.'))}${e.pond?'<br>'+esc(e.pond):''}${e.entrega?'<br>'+ddmm(dt(e.entrega)):''}</span></div>`; }).join('')}</div></div>
+    <div class="tline"><div class="tline-in">${r.evaluaciones.map(e => { const t = /EFT/.test(e.n)?'eft':/Sumativa/.test(e.n)?'sum':''; return `<div class="node ${t} ${e.sem<CUR?'past':''} ${e.sem===CUR?'cur':''}" title="${esc(e.n)}${e.entrega?' · '+ddmm(dt(e.entrega)):''}"><span class="c">${e.sem<CUR?'✓':e.sem}</span><span class="l">${esc(e.n.replace('Formativa','Form.').replace('Sumativa','Sum.'))}${e.pond?'<br>'+esc(e.pond):''}${e.entrega?'<br>'+ddmm(dt(e.entrega)):''}${e.modo?'<br>'+(/Grupal|Dupla/.test(e.modo)?'Grupal':'Indiv.'):''}</span></div>`; }).join('')}</div></div>
     <div class="legend"><span><s style="background:var(--ok)"></s>Pasada</span><span><s style="background:var(--sun)"></s>Sumativa</span><span><s style="background:var(--coral)"></s>EFT</span></div>
   </section>
   <section class="panel"><h2>Conceptos clave</h2><div class="glos">${r.conceptos.map(c => `<div class="term"><b style="color:${col}">${esc(c[0])}</b>${esc(c[1])}</div>`).join('')}</div></section>

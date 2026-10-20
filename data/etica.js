@@ -34,6 +34,8 @@ DATA.ramos.push({
     {sem: 8, n: '????', entrega: '2026-12-14T23:59'},
     {sem: 9, n: 'EFT ????', entrega: '2026-12-20T23:59'},
   ],
+  // Solo la experiencia en curso, con el nombre del AVA. Se cambia cuando empieza la siguiente.
+  experiencias: ['Exp. 1 (S1–S3): Comprendiendo la vocación profesional y virtudes humanas'],
   recursos: [
     {t: 'Corto: Reflexión para ser buena persona', u: null, k: 'video'},
     {t: 'Corto: Mr. Indiferente', u: null, k: 'video'},

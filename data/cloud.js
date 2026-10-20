@@ -35,11 +35,8 @@ DATA.ramos.push({
     {sem: 8, n: 'Sumativa 3', pond: '45%', entrega: '2026-12-14T23:59'},
     {sem: 9, n: 'EFT · análisis de caso', pond: '40% nota final', entrega: '2026-12-20T23:59'},
   ],
-  experiencias: [
-    'Exp. 1 (S1–S2): Relacionando los componentes de los sistemas informáticos y su equivalente en la nube',
-    'Exp. 2 (S3–S5): Explorando la infraestructura básica de la nube y los servicios de AWS',
-    'Exp. 3 (S6–S8): Aplicando un contexto técnico adecuado para construir soluciones Cloud de alta disponibilidad',
-  ],
+  // Solo la experiencia en curso, con el nombre del AVA. Se cambia cuando empieza la siguiente.
+  experiencias: ['Exp. 1 (S1–S2): Relacionando componentes de los sistemas informáticos y su equivalente en la nube'],
   recursos: [
     {
       t: 'Primera sesión (Collaborate)',

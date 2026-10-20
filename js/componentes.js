@@ -4,6 +4,8 @@ const ramoChip = id => { const r = ramoById(id); return r ? chip(null, r.corto, 
 // Leyenda de las alertas amarillas
 const alertasHead = () => `<p class="alerts-head"><b>${icon('alert')} Ojo con esto</b> · errores o cosas que no calzan en el material, y cambios importantes. Si te afecta, confírmalo con el profe.</p>`;
 const modoChip = m => m ? chip(/Grupal|Dupla/.test(m)?'users':'user', m, '') : '';
+// Modalidad de una entrega del calendario: la busca en las evaluaciones del ramo por fecha
+const modoDe = e => { const r = ramoById(e.ramo), ev = r && r.evaluaciones.find(x => x.entrega && sameDay(dt(x.entrega), e.d)); return ev ? ev.modo : null; };
 function dateBlock(e){ if (!e) return `<div class="dateblock unknown"><b>?</b><span>ver AVA</span></div>`; const d = dt(e); return `<div class="dateblock"><b>${d.getDate()}</b><span>${MES[d.getMonth()].slice(0,3)} · ${hhmm(d)}</span></div>`; }
 function link(t, u, k){ return u ? `<a class="lk" href="${esc(u)}" target="_blank" rel="noopener">${icon(k||'arrow')}${esc(t)}</a>` : `<span class="lk off" title="El link no venía en el material">${icon(k||'arrow')}${esc(t)} · en AVA</span>`; }
 function alertasDe(sem){ const out = [], s = DATA.semanas[sem] || {}; for (const id in s) (s[id].alertas||[]).forEach(a => out.push({id, a})); return out; }

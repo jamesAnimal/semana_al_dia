@@ -32,7 +32,7 @@ DATA.ramos.push({
   ],
   // En CBBDD las formativas son en dupla y las sumativas, individuales.
   evaluaciones: [
-    {sem: 1, n: 'Formativa 1', modo: 'Dupla', entrega: '2026-10-26T23:59'},
+    {sem: 1, n: 'Formativa 1', modo: 'Grupal', entrega: '2026-10-26T23:59'},
     {sem: 2, n: '????', entrega: '2026-11-02T23:59'},
     {sem: 3, n: '????', entrega: '2026-11-09T23:59'},
     {sem: 4, n: '????', entrega: '2026-11-16T23:59'},
@@ -42,6 +42,8 @@ DATA.ramos.push({
     {sem: 8, n: '????', entrega: '2026-12-14T23:59'},
     {sem: 9, n: 'EFT ????', entrega: '2026-12-20T23:59'},
   ],
+  // Solo la experiencia en curso, con el nombre del AVA. Se cambia cuando empieza la siguiente.
+  experiencias: ['Exp. 1: Construyendo sentencias de recuperación de datos'],
   recursos: [
     {
       t: 'Sesión sincrónica (Collaborate)',
@@ -82,7 +84,7 @@ DATA.ramos.push({
       actividad: {
         nombre: 'Relacionando conceptos básicos de SQL',
         tipo: 'Formativa',
-        modo: 'Dupla',
+        modo: 'Grupal',
         pond: null,
         entrega: '2026-10-26T23:59',
         descripcion: 'Caso Ruta Libre Rent a Car: responder preguntas conceptuales y armar consultas SELECT con alias, operadores y filtros.',
