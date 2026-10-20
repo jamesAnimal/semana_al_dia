@@ -55,6 +55,8 @@ DATA.ramos.push({
     {t: 'Consola Oracle Cloud', u: 'https://cloud.oracle.com', k: 'arrow'},
     {t: 'Caso Rent a Car S1 (PDF)', u: null, k: 'file'},
     {t: 'Scripts S1: usuario y tablas', u: null, k: 'file'},
+    {t: 'Acuerdos pedagógicos (PPTX)', u: null, k: 'file'},
+    {t: 'Aprendizaje colaborativo (PDF)', u: null, k: 'file'},
   ],
   conceptos: [
     ['SELECT', 'Pide columnas de una o más tablas.'],
@@ -103,13 +105,15 @@ DATA.ramos.push({
         pauta: null,
       },
       profe: [
-        'La sesión es los miércoles a las 21:00 y queda grabada.',
+        'Sesión con Eithel los miércoles a las 21:00 (la de Rodrigo es los jueves a las 20:00). Quedan grabadas.',
+        'Acuerdos pedagógicos: anuncio cada martes con lo de la semana, retroalimentación en máximo 3 días hábiles y respuesta por correo o mensajería en 48 horas.',
+        'Formativas en dupla: júntense temprano, armen una tabla con horarios y contacto, y usen Teams u OneDrive para trabajar juntos.',
         'Las bases de datos autónomas de Oracle Cloud se apagan tras 7 días sin uso: entra y reactívala.',
         '¿Sin cuenta Oracle Cloud? Avísale al profe para que te mande la invitación.',
         'Para preguntar en el foro: qué intentabas, el código o captura y el mensaje de error exacto.',
       ],
       alertas: [
-        'El foro dice que la formativa es individual, pero el anuncio dice que las formativas son en dupla. Confirma con el profe.',
+        'El foro dice que la formativa es individual, pero el anuncio dice que las formativas son en dupla. Además, la guía de trabajo colaborativo dice que solo un integrante sube la entrega, mientras que el foro pide subirla al repo GitHub privado de cada uno. Confirma con el profe.',
         'El foro nombra dos usuarios distintos para agregar como colaborador en GitHub (eigonzalez-docente e It-campusvirtual-bd). Confirma cuál.',
         'El caso dice que te conectes con PRY2205_DESAFIOS_S1, pero el script crea PRY2205_EJERCICIO_S1. Usa ese usuario.',
       ],

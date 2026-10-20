@@ -25,7 +25,7 @@ window.DATA = {
       tag: 'Aviso',
       ramo: 'gen',
       titulo: 'Foros de presentación abiertos',
-      texto: 'Preséntate en los foros de CBBDD y Ética.',
+      texto: 'Preséntate en los foros de CBBDD, Ética e Intro Cloud.',
     },
   ],
   carrera: {

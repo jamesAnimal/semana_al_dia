@@ -39,7 +39,7 @@ DATA.ramos.push({
   experiencias: [
     'Exp. 1 (S1–S2): Relacionando los componentes de los sistemas informáticos y su equivalente en la nube',
     'Exp. 2 (S3–S5): Explorando la infraestructura básica de la nube y los servicios de AWS',
-    'Exp. 3 (S6–S8): Construyendo soluciones Cloud de alta disponibilidad',
+    'Exp. 3 (S6–S8): Aplicando un contexto técnico adecuado para construir soluciones Cloud de alta disponibilidad',
   ],
   recursos: [
     {
@@ -104,6 +104,9 @@ DATA.ramos.push({
         'Primera sesión: martes 20/10 a las 22:00 con Ignacio Pastenet.',
         'Ojo: la semana 2 ya es Sumativa (20%), del 27/10 al 02/11.',
         'Marca como completados los recursos del AVA para ver tu avance.',
+        'Foro de presentación "Conociéndonos un poco más": quién eres, a qué te dedicas, qué te gusta y si ya has usado la nube (AWS, Azure…).',
+        'Dudas: en el foro de consultas o por mensajería de Blackboard.',
+        'El profe recomienda ir preparando alguna certificación cloud (AWS, Azure o Google Cloud).',
         'Hay 3 talleres de reforzamiento con Ignacio, antes de cada sumativa (28/10, 18/11 y 09/12, de 19:00 a 21:00).',
       ],
       alertas: [
