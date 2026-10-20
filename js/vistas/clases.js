@@ -25,6 +25,7 @@ function grabacionesRamo(r){
 
 function vClases(){
   return `<h1>Clases</h1>
+  <p class="aviso"><b aria-hidden="true">!</b><span>¿Vas a entrar a la clase de otro profe? Dale, pero con respeto: sin interrumpir, y las preguntas déjaselas primero a los de esa sección. Y si te pillan… no conoces esta página 🤫 XD</span><b aria-hidden="true">!</b></p>
   <section class="cards-3">${DATA.ramos.map(r => {
     const secs = [...r.secciones].sort((a,b) => ((proxClase(r,a)||{}).d||Infinity) - ((proxClase(r,b)||{}).d||Infinity));
     return `<article class="rcard"><div class="rhead ${r.id}"><span class="ricon">${icon(r.icono)}</span><span class="t"><b>${esc(r.corto)}</b><span>Próxima clase por profe</span></span></div>
