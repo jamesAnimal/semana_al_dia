@@ -201,14 +201,34 @@ ul.clean li::marker{color:var(--accent)}
 .empty{padding:14px;text-align:center;color:var(--muted);border:1px dashed var(--line);font-size:13px}
 
 /* clases */
-.rec-row{font-size:13px;background:var(--surface-2);border:1px solid var(--line);border-left:3px solid var(--rc,var(--accent));padding:8px 10px}
-.rec-row .who{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.recs{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+/* Tabla de Clases: mismos colores que el Excel del curso, en versión pastel de cada tema */
+.xl-wrap{overflow-x:auto;margin:0 calc(50% - min(50vw - 16px, 760px)) 8px}
+.xl{--xl-navy:color-mix(in srgb,var(--accent) 26%,var(--bg));--xl-azul:color-mix(in srgb,var(--accent) 78%,var(--surface));--xl-naranjo:color-mix(in srgb,var(--r3) 80%,var(--surface));--xl-crema:color-mix(in srgb,var(--sun) 16%,var(--surface));--xl-celeste:color-mix(in srgb,var(--accent) 10%,var(--surface));--xl-rojo:color-mix(in srgb,var(--coral) 85%,var(--surface));--xl-durazno:color-mix(in srgb,var(--r3) 18%,var(--surface))}
+.xl{border-collapse:collapse;table-layout:fixed;width:100%;min-width:900px;font-size:12px;line-height:1.3}
+.xl .c-marca{width:62px}.xl .c-fecha{width:52px}.xl .c-entrega{width:86px}.xl .c-lbl{width:110px}
+.xl th,.xl td{border:1px solid var(--line);padding:6px 5px;text-align:center;vertical-align:middle;font-weight:400;overflow-wrap:anywhere;background:var(--surface)}
+.xl tbody tr:nth-child(odd) td,.xl tr.cel td{background:var(--xl-celeste)}
+.xl small{display:block;font-size:10.5px;color:var(--muted)}
+.xl .marca{border:0;background:transparent!important;padding:0}
+.xl .marca span{display:block;background:var(--xl-rojo);color:var(--on);font-weight:800;font-size:10.5px;padding:6px 4px;line-height:1.2}
+.xl tr.xl-top td,.xl tr.xl-top th{border:0;background:transparent}
+.xl .anio{font-weight:800;font-size:13px;color:var(--ink)}
+.xl .refgrp{background:var(--xl-azul)!important;color:var(--on);font-weight:800;font-size:12.5px;border:1px solid var(--line)!important}
+.xl .fx{background:var(--xl-crema)!important;font-weight:700;color:var(--ink)}
+.xl .lbl,.xl .hd{font-weight:800;color:var(--ink);background:var(--xl-navy)!important}
+.xl .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.xl .lbl.azul{background:var(--xl-azul)!important;color:var(--on)}
+.xl .lbl.naranjo{background:var(--xl-naranjo)!important;color:var(--on)}
+.xl .profe{font-weight:700;color:var(--on);background:var(--xl-azul)!important}
+.xl .profe.ref{font-size:10.5px;overflow-wrap:normal;word-break:keep-all}
+.xl td.hay{background:var(--xl-durazno)!important}
+.xl-ev{font-weight:800;font-size:11px;margin:0 3px}
+.xl tr.eft td:not(.marca){border:0;background:transparent!important}
+.xl tr.eft td:last-child{background:var(--xl-rojo)!important;color:var(--on);font-weight:800}
+.xl-lk{font-weight:700;color:var(--accent)}
 .play{display:inline-flex;align-items:center;gap:6px;padding:2px 8px 2px 3px;font-size:11.5px;font-weight:700;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);text-decoration:none}
 .play i{width:18px;height:18px;display:grid;place-items:center;color:var(--on);font-style:normal}
 .play i::before{content:"";border-left:6px solid currentColor;border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:2px}
-.play.off{opacity:.4;font-weight:500}
-.play.off i{background:var(--line)}
 
 /* calendario */
 .cal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}

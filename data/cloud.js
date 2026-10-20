@@ -33,7 +33,7 @@ DATA.ramos.push({
     {sem: 6, n: 'Formativa', entrega: '2026-11-30T23:59'},
     {sem: 7, n: 'Formativa', entrega: '2026-12-07T23:59'},
     {sem: 8, n: 'Sumativa 3', pond: '45%', entrega: '2026-12-14T23:59'},
-    {sem: 9, n: 'EFT · análisis de caso', pond: '40% nota final', entrega: '2026-12-20T23:59'},
+    {sem: 9, n: 'EFT · análisis de caso', pond: '40% nota final'},   // fecha del EFT: se agrega cuando se confirme
   ],
   // Solo la experiencia en curso, con el nombre del AVA. Se cambia cuando empieza la siguiente.
   experiencias: ['Exp. 1 (S1–S2): Relacionando componentes de los sistemas informáticos y su equivalente en la nube'],
@@ -124,7 +124,6 @@ DATA.ramos.push({
     {fecha: '2026-11-30T23:59', titulo: 'Formativa Intro Cloud S6', ramo: 'r3', tipo: 'entrega'},
     {fecha: '2026-12-07T23:59', titulo: 'Formativa Intro Cloud S7', ramo: 'r3', tipo: 'entrega'},
     {fecha: '2026-12-14T23:59', titulo: 'Sumativa 3 Intro Cloud (45%)', ramo: 'r3', tipo: 'entrega'},
-    {fecha: '2026-12-20T23:59', titulo: 'Cierre EFT Intro Cloud (abre jue 10/12)', ramo: 'r3', tipo: 'entrega'},
     {
       fecha: '2026-10-28T19:00',
       titulo: 'Taller N°1 Intro Cloud',
@@ -156,7 +155,7 @@ DATA.ramos.push({
       tag: 'Evaluación',
       ramo: 'r3',
       titulo: 'Intro Cloud publicó su calendario completo',
-      texto: '3 sumativas (20%, 35% y 45% de las experiencias = 60% de la nota) y EFT análisis de caso (40%) del 10 al 20 de diciembre.',
+      texto: '3 sumativas (20%, 35% y 45% de las experiencias = 60% de la nota) y EFT análisis de caso (40%).',
     },
     {
       fecha: '2026-10-20',

@@ -32,7 +32,7 @@ DATA.ramos.push({
     {sem: 6, n: '????', entrega: '2026-11-30T23:59'},
     {sem: 7, n: '????', entrega: '2026-12-07T23:59'},
     {sem: 8, n: '????', entrega: '2026-12-14T23:59'},
-    {sem: 9, n: 'EFT ????', entrega: '2026-12-20T23:59'},
+    {sem: 9, n: 'EFT ????'},   // fecha del EFT: se agrega cuando se confirme
   ],
   // Solo la experiencia en curso, con el nombre del AVA. Se cambia cuando empieza la siguiente.
   experiencias: ['Exp. 1 (S1–S3): Comprendiendo la vocación profesional y virtudes humanas'],
@@ -93,7 +93,6 @@ DATA.ramos.push({
     {fecha: '2026-11-30T23:59', titulo: 'Entrega Ética S6', ramo: 'r2', tipo: 'entrega'},
     {fecha: '2026-12-07T23:59', titulo: 'Entrega Ética S7', ramo: 'r2', tipo: 'entrega'},
     {fecha: '2026-12-14T23:59', titulo: 'Entrega Ética S8', ramo: 'r2', tipo: 'entrega'},
-    {fecha: '2026-12-20T23:59', titulo: 'Cierre EFT Ética (abre jue 10/12)', ramo: 'r2', tipo: 'entrega'},
   ],
   noticias: [],
 });

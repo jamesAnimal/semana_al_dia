@@ -3,7 +3,7 @@
 // Cada ramo vive en su propio archivo (cbbdd.js, etica.js, cloud.js) y se agrega a DATA.ramos.
 window.DATA = {
   actualizado: '2026-10-20',
-  version: '0.2',   // versión de la página (no del contenido). Reglas en AGENTS.md
+  version: '0.3',   // versión de la página (no del contenido). Reglas en AGENTS.md
   hoySimulado: null,
   bimestre: {nombre: 'Bimestre 4', inicio: '2026-10-19', semanas: 9},
   ramos: [],

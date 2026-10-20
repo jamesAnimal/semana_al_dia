@@ -1,35 +1,42 @@
-// seman@_al_día · pestaña Clases y grabaciones. Todo separado por ramo y por profe (sección).
-const proxClase = (r, sc) => EVENTS.find(e => e.ramo===r.id && e.tipo==='clase' && e.profe===sc.profe && e.seccion===sc.seccion && e.d > NOW);
-const cuanto = d => { const p = parts(d); return `en ${p.D?p.D+' d ':''}${p.H} h ${p.M} min`; };
-
-function filaSeccion(r, sc){
-  const nx = proxClase(r, sc);
-  const when = nx ? `<span class="when"><b>${nx.d.getDate()}</b><span>${DOW[nx.d.getDay()]} ${hhmm(nx.d)}</span></span>` : `<span class="when"><b>?</b><span>????</span></span>`;
-  const sub = nx ? cuanto(nx.d) : (sc.dia ? 'Sin más clases este bimestre' : 'Horario: ????');
-  return `<div class="ag">${when}<span class="grow"><b>${esc(sc.profe)}</b><br><span class="small muted">Sección ${esc(sc.seccion||'????')} · ${sub}</span></span>${link('Entrar', sc.link, 'video')}</div>`;
-}
-
-// Talleres de reforzamiento: van en eventos del ramo como tipo 'clase' (uno antes de cada sumativa)
-function reforzamiento(r){
-  const todos = EVENTS.filter(e => e.ramo===r.id && e.tipo==='clase' && e.puntual), prox = todos.filter(e => e.d > NOW);
-  const filas = prox.map(e => `<div class="ag"><span class="when"><b>${e.d.getDate()}</b><span>${DOW[e.d.getDay()]} ${hhmm(e.d)}</span></span><span class="grow"><b>${esc(e.titulo.replace(' '+r.corto, ''))}</b><br><span class="small muted">${esc(e.profe)} · ${cuanto(e.d)}</span></span>${link('Entrar', e.link, 'video')}</div>`).join('');
-  return `<span class="eyebrow">Reforzamiento</span><div class="agenda">${filas || `<div class="empty">${todos.length ? 'No quedan talleres este bimestre.' : 'Fechas: ????'}</div>`}</div>`;
-}
-
-function grabacionesRamo(r){
-  const semanas = Array.from({length:Math.min(CUR, SEMANAS_CLASES)}, (_,i) => i+1);
-  return `<div class="panel"><h2 style="color:var(--${r.id})">${esc(r.corto)}</h2><div class="agenda">${r.secciones.map(sc => `<div class="rec-row" style="--rc:var(--${r.id})"><div class="who">${icon('user')}<b>${esc(sc.profe)}</b><span class="small muted">Sección ${esc(sc.seccion||'????')}</span></div>
-    <div class="recs">${semanas.map(w => { const u = (sc.grabaciones||{})[w];
-      return u ? `<a class="play" href="${esc(u)}" target="_blank" rel="noopener"><i style="background:var(--${r.id})"></i>S${w}</a>` : `<span class="play off" title="Sin grabación todavía"><i></i>S${w}</span>`; }).join('')}</div></div>`).join('')}</div></div>`;
-}
+// seman@_al_día · pestaña Clases. Copia de la hoja "Bimestre 4" del Excel del curso, con los colores de la página:
+// marca de semana actual, Fecha, Entrega, rótulos, una columna por profe y Reforzamiento a la derecha.
+const ORDEN_EXCEL = ['r1', 'r3', 'r2'];   // mismo orden de ramos que el Excel: CBBDD, Cloud, Ética
+const evTipo = e => !e || !e.n || e.n==='????' ? '?' : /EFT/.test(e.n) ? 'EFT' : /Sumativa/.test(e.n) ? 'Sumativa' : /Formativa/.test(e.n) ? 'Formativa' : e.n;
+const evAbr = t => ({Formativa:'Form.', Sumativa:'Sum.'})[t] || t;
 
 function vClases(){
+  const ramos = [...DATA.ramos].sort((a,b) => ORDEN_EXCEL.indexOf(a.id) - ORDEN_EXCEL.indexOf(b.id));
+  const cols = ramos.flatMap(r => r.secciones.map(sc => ({r, sc})));
+  const refs = ramos.map(r => ({r, ev: EVENTS.filter(e => e.ramo===r.id && e.tipo==='clase' && e.puntual)}));
+  const semanas = Array.from({length:DATA.bimestre.semanas}, (_,i) => i+1);
+  const lbl = (t, cls) => `<th class="lbl ${cls||''}" scope="row">${t}</th>`;
+  const vacias = '<td class="marca"></td><td class="fx"></td><td class="fx"></td>';
+  const fila = (t, cel, celRef, cls, rowCls) => `<tr class="${rowCls||''}">${vacias}${lbl(t, cls)}${cols.map(cel).join('')}${refs.map(celRef).join('')}</tr>`;
+  const refHora = x => { const t = x.ev.find(e => e.d > NOW) || x.ev[x.ev.length-1]; return t ? `${ddmm(t.d)}/${t.d.getFullYear()} ${hhmm(t.d)}` : '????'; };
+  const link = u => u ? `<a class="xl-lk" href="${esc(u)}" target="_blank" rel="noopener">Link</a>` : '????';
+  const eft = (ramos.flatMap(r => r.evaluaciones).find(e => /EFT/.test(e.n) && e.entrega)||{}).entrega;
+
+  const head = `
+    <tr class="xl-top"><td class="marca"></td><td class="anio" colspan="2">${NOW.getFullYear()}</td><td></td><td colspan="${cols.length}"></td><th class="refgrp" colspan="${refs.length}">Reforzamiento</th></tr>
+    <tr><td class="marca"></td><th class="fx">Fecha</th><th class="fx">Entrega</th>${lbl('Ramo')}${[...cols, ...refs].map(c => `<th class="hd">${esc(c.r.corto.toUpperCase())}</th>`).join('')}</tr>
+    ${fila('Profe', c => `<td class="profe">${esc(c.sc.profe)}</td>`, () => `<td class="profe ref">Reforzamiento</td>`, 'azul')}
+    ${fila('Sección', c => `<td>${esc(c.sc.seccion||'????')}</td>`, () => `<td></td>`, '', 'cel')}
+    ${fila('Horario', c => `<td>${c.sc.dia ? DOWL[c.sc.dia]+' / '+c.sc.hora : '????'}</td>`, x => `<td>${refHora(x)}</td>`, '', 'cel')}
+    ${fila('Link clase online', c => `<td>${link(c.sc.link)}</td>`, () => `<td></td>`, 'naranjo')}`;
+
+  const body = semanas.map(w => {
+    const fecha = (ramos.flatMap(r => r.evaluaciones).find(e => e.sem===w && e.entrega)||{}).entrega;
+    const evs = ramos.map(r => r.evaluaciones.find(e => e.sem===w)), tipos = evs.map(evTipo);
+    const entrega = evs.every(e => e && e.n===evs[0].n && e.n!=='????') ? esc(evs[0].n)
+      : tipos.every(t => t==='?') ? '' : tipos.every(t => t===tipos[0]) ? esc(tipos[0]) : ramos.map((r,i) => `<span class="xl-ev" style="color:var(--${r.id})" title="${esc(r.corto)}: ${esc(tipos[i])}">${esc(evAbr(tipos[i]))}</span>`).join('');
+    const grab = c => { const u = (c.sc.grabaciones||{})[w]; return `<td>${u ? `<a class="xl-lk" href="${esc(u)}" target="_blank" rel="noopener">Grabación</a>` : ''}</td>`; };
+    const taller = x => { const t = x.ev.find(e => weekOf(e.d)===w); return `<td class="${t?'hay':''}">${t ? `<a class="xl-lk" href="${esc(t.link||'#')}" target="_blank" rel="noopener">${esc(t.titulo.replace(' '+x.r.corto, ''))}</a><small>${ddmm(t.d)} · ${hhmm(t.d)}</small>` : ''}</td>`; };
+    return `<tr class="${w===CUR?'cur':''}"><td class="marca">${w===CUR?'<span>Semana actual</span>':''}</td><td class="fx">${fecha ? ddmm(dt(fecha)) : '????'}</td><td class="fx">${entrega}</td>${lbl('Semana '+w)}${cols.map(grab).join('')}${refs.map(taller).join('')}</tr>`;
+  }).join('');
+  const pie = `<tr class="eft"><td class="marca"></td><td colspan="3"></td><td colspan="${cols.length + refs.length}">EFT | ${eft ? 'Entrega máxima '+DOWL[dt(eft).getDay()].toLowerCase()+' '+ddmm(dt(eft))+'/'+dt(eft).getFullYear()+' '+hhmm(dt(eft)) : 'Fecha por confirmar'}</td></tr>`;
+
   return `<h1>Clases</h1>
   <p class="aviso"><b aria-hidden="true">!</b><span>¿Vas a entrar a la clase de otro profe? Dale, pero con respeto: sin interrumpir, y las preguntas déjaselas primero a los de esa sección. Y si te pillan… no conoces esta página 🤫 XD</span><b aria-hidden="true">!</b></p>
-  <section class="cards-3">${DATA.ramos.map(r => {
-    const secs = [...r.secciones].sort((a,b) => ((proxClase(r,a)||{}).d||Infinity) - ((proxClase(r,b)||{}).d||Infinity));
-    return `<article class="rcard"><div class="rhead ${r.id}"><span class="ricon">${icon(r.icono)}</span><span class="t"><b>${esc(r.corto)}</b><span>Próxima clase por profe</span></span></div>
-      <div class="rbody"><div class="agenda">${secs.map(sc => filaSeccion(r, sc)).join('')}</div>${reforzamiento(r)}</div></article>`; }).join('')}</section>
-  <h2>Grabaciones</h2>
-  <section class="cards-3">${DATA.ramos.map(grabacionesRamo).join('')}</section>`;
+  <div class="xl-wrap"><table class="xl"><colgroup><col class="c-marca"><col class="c-fecha"><col class="c-entrega"><col class="c-lbl"></colgroup><thead>${head}</thead><tbody>${body}${pie}</tbody></table></div>
+  <p class="small muted">Fecha = cierre de las entregas de esa semana (23:59). Entrega: si cambia según el ramo, sale una por ramo con su color (Form. = formativa, Sum. = sumativa, ? = todavía no se sabe).</p>`;
 }
