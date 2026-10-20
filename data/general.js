@@ -29,7 +29,7 @@ window.DATA = {
   ],
   carrera: {
     ejemplo: false,
-    nombre: 'Analista Programador',
+    nombre: 'Analista Programador Computacional · Online · Ingreso 2026',
     bimestres: [
       {n: 1, estado: 'aprobado', ramos: ['Fundamentos de Programación', 'Fundamentos de Antropología']},
       {n: 2, estado: 'aprobado', ramos: ['Desarrollo Orientado a Objetos I', 'Habilidades de Comunicación']},

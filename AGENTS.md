@@ -47,7 +47,7 @@ data/cloud.js       ramo r3 · Introducción al Cloud Computing
 
 1. Todo en **español** (chileno informal está bien).
 2. Si falta un dato: **`????`**. Nunca inventes fechas, profes, links ni ponderaciones.
-3. **Alertas** (amarillas con "!"): SOLO para contradicciones o errores del material (por ejemplo: el foro dice individual y el anuncio dice dupla, una plantilla sin rellenar o dos usuarios distintos para GitHub). No son recordatorios.
+3. **Alertas** (amarillas con "!"): SOLO para contradicciones o errores del material (por ejemplo: dos usuarios distintos para GitHub o un usuario de Oracle que no calza con el script) y para cambios importantes que todo el curso tiene que saber (por ejemplo: un profe reemplazado). No son recordatorios. Arriba de las alertas sale una leyenda que explica esto.
 4. **Datos que faltan** (un horario o un profe que no se sabe): van como `????` en su campo y, si hace falta explicar, con un comentario `// PENDIENTE: ...` en el archivo de `data/`. Nunca como alerta: las alertas las ve todo el curso, los comentarios solo quien mantiene la página.
 5. Las entregas llevan su semana o número: `Formativa CBBDD S1`, `Sumativa 1 Intro Cloud (20%)`. En la tarjeta de próximas entregas se agrupan todas las del mismo día.
 6. La **mascota no tiene nombre** por ahora. Sus frases (`gata` en `general.js`) son humor dev "flaite" chileno. Para agregar chistes, edita `gata.chistes`.

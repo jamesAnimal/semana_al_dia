@@ -15,7 +15,7 @@ function vRamo(id){
     <div class="sched">${r.secciones.map(sc => `<span>${sc.dia?DOWL[sc.dia].slice(0,3)+' '+sc.hora:'????'} · ${esc(sc.profe.split(' ')[0])}${sc.seccion&&sc.seccion!=='????'?' '+esc(sc.seccion):''}</span>`).join('') || '<span>Profe y horario: ????</span>'}</div></div>
   </section>
   ${s?`
-  ${(s.alertas||[]).length?`<section class="alerts">${s.alertas.map(x => `<div class="alert"><span class="ico">${icon('alert')}</span><div>${esc(x)}</div></div>`).join('')}</section>`:''}
+  ${(s.alertas||[]).length?`<section class="alerts">${alertasHead()}${s.alertas.map(x => `<div class="alert"><span class="ico">${icon('alert')}</span><div>${esc(x)}</div></div>`).join('')}</section>`:''}
   <section class="grid">
     <div class="panel"><span class="eyebrow">Materia</span><h2>${esc(s.tema)}</h2><ul class="clean small">${s.resumen.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
     ${a?`<div class="panel"><span class="eyebrow">Actividad</span>

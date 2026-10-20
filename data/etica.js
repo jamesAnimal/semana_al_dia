@@ -25,8 +25,8 @@ DATA.ramos.push({
   ],
   evaluaciones: [
     {sem: 1, n: 'Formativa 1', modo: 'Individual', entrega: '2026-10-26T23:59'},
-    {sem: 2, n: '????', entrega: '2026-11-02T23:59'},
-    {sem: 3, n: '????', entrega: '2026-11-09T23:59'},
+    {sem: 2, n: 'Formativa 2', entrega: '2026-11-02T23:59'},
+    {sem: 3, n: 'Sumativa 1', pond: '????', entrega: '2026-11-09T23:59'},
     {sem: 4, n: '????', entrega: '2026-11-16T23:59'},
     {sem: 5, n: '????', entrega: '2026-11-23T23:59'},
     {sem: 6, n: '????', entrega: '2026-11-30T23:59'},

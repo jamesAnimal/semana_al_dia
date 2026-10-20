@@ -12,7 +12,7 @@ function vInicio(){
       <div class="cd-list">${entregasDelDia(nd).map(e => `${ramoChip(e.ramo)}<span>${esc(e.titulo.replace(' '+ramoById(e.ramo)?.corto, ''))}</span>`).join('')}</div></div>${tiles(nd.d)}</div>`
           : `<div class="cd-card calm"><span class="eyebrow">Próximas entregas</span><h2>Nada pendiente</h2><p class="small muted">Disfruta mientras dure.</p></div>`}
   </section>
-  ${al.length?`<section class="alerts">${al.map(x => `<div class="alert"><span class="ico">${icon('alert')}</span><div>${ramoChip(x.id)} ${esc(x.a)}</div></div>`).join('')}</section>`:''}
+  ${al.length?`<section class="alerts">${alertasHead()}${al.map(x => `<div class="alert"><span class="ico">${icon('alert')}</span><div>${ramoChip(x.id)} ${esc(x.a)}</div></div>`).join('')}</section>`:''}
   <section class="cards-3">${DATA.ramos.map(r => ramoCard(r, w[r.id])).join('')}${Array.from({length:slots-DATA.ramos.length}, () => `<article class="rcard ghost"><div class="rhead"><span class="ricon">${icon('star')}</span><span class="t"><b>Ramo 3</b><span>Se carga cuando llegue el material</span></span></div><div class="rbody"><div class="empty">Pronto…</div></div></article>`).join('')}</section>
   <section class="home-cal">
     <div class="panel">${calWidget()}</div>
