@@ -114,9 +114,7 @@ DATA.ramos.push({
         'El profe recomienda ir preparando alguna certificación cloud (AWS, Azure o Google Cloud).',
         'Hay 3 talleres de reforzamiento con Ignacio, antes de cada sumativa (28/10, 18/11 y 09/12, de 19:00 a 21:00).',
       ],
-      alertas: [
-        'El anuncio de la semana 1 dice "Fecha límite: [Indicar fecha]": el profe no la completó. Según el calendario del ramo, la formativa cierra el lunes 26/10.',
-      ],
+      alertas: [],
       clases: [],
     },
   },
@@ -135,6 +133,7 @@ DATA.ramos.push({
       titulo: 'Taller N°1 Intro Cloud',
       ramo: 'r3',
       tipo: 'clase',
+      profe: 'Ignacio Pastenet',
       link: 'https://us.bbcollab.com/guest/40a570262faf4df3a5d3aae91fabedd8',
     },
     {
@@ -142,6 +141,7 @@ DATA.ramos.push({
       titulo: 'Taller N°2 Intro Cloud',
       ramo: 'r3',
       tipo: 'clase',
+      profe: 'Ignacio Pastenet',
       link: 'https://us.bbcollab.com/guest/323201dde5994dc3a85d8aaa156e7e2b',
     },
     {
@@ -149,6 +149,7 @@ DATA.ramos.push({
       titulo: 'Taller N°3 Intro Cloud',
       ramo: 'r3',
       tipo: 'clase',
+      profe: 'Ignacio Pastenet',
       link: 'https://us.bbcollab.com/guest/da1b9e2187ff468bbcabaa4ff0870dda',
     },
   ],

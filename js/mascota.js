@@ -22,5 +22,5 @@ function catCard(ctx){
   if (catCtx !== ctx){ catList = catPhrases(ctx); catIdx = 0; catCtx = ctx; }
   return `<div class="cat-card"><span class="cat-week">Semana ${CUR} de ${DATA.bimestre.semanas}${TERMINADO?' · bimestre cerrado':''}</span>
     <button class="cat-btn" id="cat-btn" aria-label="Tocar a la mascota para otro chiste">${catSVG()}</button>
-    <p class="bubble" aria-live="polite"><span id="cat-text">${esc(catList[catIdx])}</span><small>chiste del día · tócalo pa otro</small></p></div>`;
+    <p class="bubble" aria-live="polite"><span id="cat-text">${esc(catList[catIdx])}</span><small>chiste del día · <b>apriétame pa otra frase</b></small></p></div>`;
 }

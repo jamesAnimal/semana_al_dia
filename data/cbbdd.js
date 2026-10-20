@@ -30,8 +30,9 @@ DATA.ramos.push({
       link: 'https://us.bbcollab.com/guest/0bfe64ff20bd4fee9440601c43c25a36',
     },
   ],
+  // En CBBDD las formativas son en dupla y las sumativas, individuales.
   evaluaciones: [
-    {sem: 1, n: 'Formativa 1', modo: 'Individual (o dupla, ver alerta)', entrega: '2026-10-26T23:59'},
+    {sem: 1, n: 'Formativa 1', modo: 'Dupla', entrega: '2026-10-26T23:59'},
     {sem: 2, n: '????', entrega: '2026-11-02T23:59'},
     {sem: 3, n: '????', entrega: '2026-11-09T23:59'},
     {sem: 4, n: '????', entrega: '2026-11-16T23:59'},
@@ -81,7 +82,7 @@ DATA.ramos.push({
       actividad: {
         nombre: 'Relacionando conceptos básicos de SQL',
         tipo: 'Formativa',
-        modo: 'Individual',
+        modo: 'Dupla',
         pond: null,
         entrega: '2026-10-26T23:59',
         descripcion: 'Caso Ruta Libre Rent a Car: responder preguntas conceptuales y armar consultas SELECT con alias, operadores y filtros.',
@@ -114,13 +115,13 @@ DATA.ramos.push({
       ],
       alertas: [
         'Sección 006A: la profe Lourdes Townsend sigue ausente. Mientras tanto, las clases las hace el profe Eithel González, los miércoles a las 21:00.',
-        'El foro dice que la formativa es individual, pero el anuncio dice que las formativas son en dupla. Además, la guía de trabajo colaborativo dice que solo un integrante sube la entrega, mientras que el foro pide subirla al repo GitHub privado de cada uno. Confirma con el profe.',
         'El foro nombra dos usuarios distintos para agregar como colaborador en GitHub (eigonzalez-docente e It-campusvirtual-bd). Confirma cuál.',
         'El caso dice que te conectes con PRY2205_DESAFIOS_S1, pero el script crea PRY2205_EJERCICIO_S1. Usa ese usuario.',
       ],
       clases: [],
     },
   },
+  // PENDIENTE: talleres de reforzamiento con Eithel (fechas en CalendarioReforzamientos.jpg del anuncio 1)
   eventos: [
     // Mismas fechas de cierre para todos los ramos (las pone el sistema). Tipo de evaluación: ????
     {fecha: '2026-10-26T23:59', titulo: 'Formativa CBBDD S1', ramo: 'r1', tipo: 'entrega'},
@@ -153,7 +154,7 @@ DATA.ramos.push({
       tag: 'Aviso',
       ramo: 'r1',
       titulo: 'Eithel reemplaza por un tiempo a la profe Lourdes Townsend',
-      texto: 'Formativas en dupla y sumativas individuales, según el anuncio.',
+      texto: 'Las formativas son en dupla y las sumativas, individuales.',
     },
   ],
 });

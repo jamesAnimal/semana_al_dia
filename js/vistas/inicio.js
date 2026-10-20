@@ -1,8 +1,6 @@
 // seman@_al_día · pestaña Inicio.
 function vInicio(){
   const w = DATA.semanas[SEM] || {}, nd = nextDeadline(), al = alertasDe(SEM);
-  const today0 = new Date(NOW.getFullYear(), NOW.getMonth(), NOW.getDate());
-  const next7 = EVENTS.filter(e => e.d >= today0 && e.d < addDays(today0,7));
   const selD = dt(calSel), selEv = EVENTS.filter(e => sameDay(e.d, selD));
   const c = DATA.carrera, tot = c.bimestres.length, done = c.bimestres.filter(b => b.estado==='aprobado').length, frac = CUR/DATA.bimestre.semanas;
   const pct = Math.round((done + frac)/tot*100);
@@ -19,10 +17,8 @@ function vInicio(){
   <section class="home-cal">
     <div class="panel">${calWidget()}</div>
     <div class="panel">
-      <div class="panel-head"><h2>${sameDay(selD,NOW)?'Hoy':DOWL[selD.getDay()]+' '+selD.getDate()}</h2><span class="small muted">toca un día del calendario</span></div>
+      <div class="panel-head"><h2>${sameDay(selD,NOW)?'Hoy · ':''}${DOWL[selD.getDay()]} ${selD.getDate()} de ${MES[selD.getMonth()]}</h2><span class="small muted">toca un día del calendario</span></div>
       <div class="agenda">${selEv.length ? selEv.map(agRow).join('') : '<div class="empty">Día libre. A dormir.</div>'}</div>
-      <div class="panel-head" style="margin-top:6px"><h2>Próximos 7 días</h2></div>
-      <div class="agenda">${next7.length ? next7.slice(0,8).map(agRow).join('') + (next7.length>8?`<span class="small muted">y ${next7.length-8} más…</span>`:'') : '<div class="empty">Semana tranquila.</div>'}</div>
     </div>
   </section>
   <section class="grid">

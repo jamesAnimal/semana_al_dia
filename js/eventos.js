@@ -7,7 +7,7 @@ function allEvents(){
     const d = addDays(weekStart(w), x.dia-1); const [h,m] = x.hora.split(':').map(Number); d.setHours(h,m);
     ev.push({d, titulo:`${r.corto} ${s.profe.split(' ')[0]}`, ramo:r.id, tipo:'clase', profe:s.profe, seccion:s.seccion, link:s.link});
   }
-  for (const e of DATA.eventos) ev.push({d:dt(e.fecha), titulo:e.titulo, ramo:e.ramo||'gen', tipo:e.tipo, allDay:!e.fecha.includes('T'), link:e.link||null, profe:e.titulo, seccion:'todas'});
+  for (const e of DATA.eventos) ev.push({d:dt(e.fecha), titulo:e.titulo, ramo:e.ramo||'gen', tipo:e.tipo, allDay:!e.fecha.includes('T'), link:e.link||null, profe:e.profe||'????', seccion:'todas', puntual:true});
   return ev.sort((a,b) => a.d-b.d);
 }
 const EVENTS = allEvents();

@@ -115,10 +115,19 @@ window.DATA = {
       u: 'https://us.bbcollab.com/guest/c2d268804549476ebf5c75d945bc3615',
     },
   ],
+  carpeta: {
+    u: 'https://drive.google.com/drive/folders/1VIQk8mKPSHaEhc2QRDunBYcKocv3ap4A',
+    acceso: 'Entra con tu correo Duoc (@duocuc.cl). Con el correo personal no te va a dejar.',
+    reglas: [
+      'Solo cosas de la carrera: apuntes, resúmenes, guías, ejemplos y grabaciones.',
+      'Sin datos personales: ni RUT, ni notas, ni contraseñas.',
+      'No borres ni muevas lo que subió otra persona.',
+    ],
+  },
   recursosGenerales: [
     {t: 'AVA', u: 'https://ava.duoc.cl', k: 'arrow', fijo: true},
     {t: 'Consola Oracle Cloud', u: 'https://cloud.oracle.com', k: 'arrow', fijo: true},
-    {t: 'Carpeta compartida del curso', u: null, k: 'folder', fijo: true},
+    {t: 'Carpeta compartida del curso', u: 'https://drive.google.com/drive/folders/1VIQk8mKPSHaEhc2QRDunBYcKocv3ap4A', k: 'folder', fijo: true},
     {t: 'GitHub', u: 'https://github.com', k: 'github', fijo: true},
     {
       t: 'Descargar SQL Developer',
