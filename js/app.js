@@ -12,6 +12,7 @@ function render(){
   $('#view').innerHTML = {inicio:vInicio, ramos:vRamos, clases:vClases, noticias:vNoticias, recursos:vRecursos, carrera:vCarrera, readme:vReadme}[tab]();
 }
 $('#updated').textContent = 'Actualizado el ' + ddmm(dt(DATA.actualizado));
+if (DATA.version) $('#version').textContent = 'BETA v' + DATA.version;
 if (DATA.hoySimulado){ $('#demo').hidden = false; $('#demo-text').textContent = `Vista de demostración: la página se muestra como si hoy fuera ${DOWL[NOW.getDay()].toLowerCase()} ${ddmm(NOW)}, en la semana ${CUR}.`; }
 
 window.addEventListener('hashchange', () => { render(); window.scrollTo({top:0}); });

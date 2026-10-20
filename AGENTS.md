@@ -42,6 +42,7 @@ data/cloud.js       ramo r3 · Introducción al Cloud Computing
 - `semanas: {1: {tema, resumen: [...], actividad: {...}, profe: [...], alertas: [...], clases: []}}`.
 - `actividad.pauta`: `[['criterio', puntos], ...]` o `null` si no se conoce.
 - `hoySimulado` en `data/general.js` debe quedar en `null` (solo se usa para probar).
+- `version` en `data/general.js` es la versión de la página y sale junto al nombre ("BETA v0.1"). **No** sube con el contenido semanal (para eso está `actualizado`). Sube el segundo número (0.1 → 0.2) cuando cambia la página misma: sección nueva, cambio de diseño o función nueva. Al subirla, marca el commit con un tag de Git (`v0.2`). La v1.0 la deciden las personas, no los agentes; ahí se saca "BETA".
 
 ## Reglas de contenido
 
