@@ -1,4 +1,4 @@
-// Semana al Día · pestañas, temas, clics y arranque. Se carga al final.
+// seman@_al_día · pestañas, temas, clics y arranque. Se carga al final.
 const TABS = [['inicio','Inicio'], ['ramos','Ramos'], ['clases','Clases'], ['noticias','Noticias'], ['recursos','Recursos'], ['carrera','Carrera']];
 const current = () => {
   const h = location.hash.slice(1);

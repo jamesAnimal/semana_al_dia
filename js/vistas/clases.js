@@ -1,4 +1,4 @@
-// Semana al Día · pestaña Clases y grabaciones.
+// seman@_al_día · pestaña Clases y grabaciones.
 function vClases(){
   return `<h1>Clases</h1>
   <section class="cards-3">${DATA.ramos.map(r => { const nx = EVENTS.find(e => e.ramo===r.id && e.tipo==='clase' && e.d > NOW);

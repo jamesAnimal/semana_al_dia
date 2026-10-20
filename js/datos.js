@@ -1,4 +1,4 @@
-// Semana al Día · junta los datos de data/*.js en un solo DATA.
+// seman@_al_día · junta los datos de data/*.js en un solo DATA.
 // Junta los datos: cada archivo de ramo trae sus semanas, entregas y noticias
 const DATA = window.DATA;
 DATA.semanas = {};

@@ -1,4 +1,4 @@
-// Semana al Día · piezas chicas que usan varias vistas (chips, links, alertas).
+// seman@_al_día · piezas chicas que usan varias vistas (chips, links, alertas).
 const chip = (k, txt, cls) => `<span class="chip ${cls||''}">${k?icon(k):''}${esc(txt)}</span>`;
 const ramoChip = id => { const r = ramoById(id); return r ? chip(null, r.corto, id) : chip(null, 'General', 'gen'); };
 const modoChip = m => m ? chip(m==='Grupal'?'users':'user', m, '') : '';

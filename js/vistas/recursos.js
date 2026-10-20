@@ -1,4 +1,4 @@
-// Semana al Día · pestaña Recursos.
+// seman@_al_día · pestaña Recursos.
 function vRecursos(){
   return `<h1>Recursos</h1>
   <section class="panel"><h2>Del curso</h2><div class="links">${DATA.recursosGenerales.map(x => link(x.t, x.u, x.k)).join('')}</div></section>

@@ -1,4 +1,4 @@
-// Semana al Día · calendario chico del inicio y filas de agenda.
+// seman@_al_día · calendario chico del inicio y filas de agenda.
 let calMonth = new Date(NOW.getFullYear(), NOW.getMonth(), 1), calSel = isoD(NOW), calFiltro = 'todos';
 const agRow = e => `<div class="ag"><span class="when"><b>${e.d.getDate()}</b><span>${DOW[e.d.getDay()]}${e.allDay?'':' '+hhmm(e.d)}</span></span><span class="grow">${e.tipo==='entrega'?chip(null,'Entrega','hot')+' ':e.tipo==='feriado'?chip(null,'Feriado')+' ':ramoChip(e.ramo)+' '}${esc(e.titulo)}</span>${e.tipo!=='feriado'?`<a href="${gcal(e.titulo,e.d,e.tipo==='entrega'?1:60)}" target="_blank" rel="noopener" title="Agregar a Google Calendar">+ cal</a>`:''}</div>`;
 function calWidget(){

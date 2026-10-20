@@ -1,4 +1,4 @@
-// Semana al Día · utilidades: texto, fechas, semana actual e íconos.
+// seman@_al_día · utilidades: texto, fechas, semana actual e íconos.
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const DOW = ['dom','lun','mar','mié','jue','vie','sáb'];

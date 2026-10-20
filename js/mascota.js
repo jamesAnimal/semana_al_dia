@@ -1,4 +1,4 @@
-// Semana al Día · la mascota (sin nombre por ahora) y sus frases.
+// seman@_al_día · la mascota (sin nombre por ahora) y sus frases.
 // La mascota (sin nombre por ahora)
 const BUGY = 'assets/mascota.webp';
 function catSVG(cls){ return `<img class="${cls||'cat'}" src="${BUGY}" alt="La mascota del curso">`; }

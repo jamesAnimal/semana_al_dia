@@ -1,4 +1,4 @@
-# Semana al Día · reglas para agentes
+# seman@_al_día · reglas para agentes
 
 Página de solo lectura donde un curso de **Analista Programador (Duoc UC, modalidad online)** revisa lo que viene cada semana: resumen por ramo, actividades, entregas, clases, calendario, noticias, recursos y avance de la carrera.
 

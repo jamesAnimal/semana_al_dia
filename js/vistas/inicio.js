@@ -1,4 +1,4 @@
-// Semana al Día · pestaña Inicio.
+// seman@_al_día · pestaña Inicio.
 function vInicio(){
   const w = DATA.semanas[SEM] || {}, nd = nextDeadline(), al = alertasDe(SEM);
   const today0 = new Date(NOW.getFullYear(), NOW.getMonth(), NOW.getDate());

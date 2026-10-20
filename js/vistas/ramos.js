@@ -1,4 +1,4 @@
-// Semana al Día · pestaña Ramos (detalle de cada ramo).
+// seman@_al_día · pestaña Ramos (detalle de cada ramo).
 let ramoSel = DATA.ramos[0].id;
 function vRamos(){
   return `<div class="ramos-switch">${DATA.ramos.map(r => `<a href="#ramos-${r.id}" class="fchip ${r.id}" aria-pressed="${r.id===ramoSel}">${icon(r.icono)} ${esc(r.corto)}</a>`).join('')}</div>${vRamo(ramoSel)}`;

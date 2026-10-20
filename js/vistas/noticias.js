@@ -1,4 +1,4 @@
-// Semana al Día · pestaña Noticias.
+// seman@_al_día · pestaña Noticias.
 const newsIcon = t => ({Taller:'wrench', Certificación:'star', Herramientas:'download', Recurso:'folder'})[t] || 'bulb';
 const newsColor = n => n.ramo==='gen' ? 'background:var(--sun-soft);color:var(--ink)' : `background:var(--${n.ramo}-soft);color:var(--${n.ramo})`;
 function vNoticias(){

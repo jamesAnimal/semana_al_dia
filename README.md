@@ -1,4 +1,4 @@
-# semana @l día
+# seman@_al_día
 
 Página del curso con lo que viene cada semana: resumen por ramo, entregas, clases, calendario, noticias, recursos y avance de la carrera. Analista Programador, Duoc UC online. Sitio hecho por estudiantes, no oficial.
 

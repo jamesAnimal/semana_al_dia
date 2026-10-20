@@ -1,4 +1,4 @@
-/* Estilos de Semana al Día (estilo Omarchy). Colores en :root y en cada [data-t]. */
+/* Estilos de seman@_al_día (estilo Omarchy). Colores en :root y en cada [data-t]. */
 html,body{margin:0} [hidden]{display:none!important} img{max-width:100%}
 /* Layout: mismo orden que antes (pestañas → banner con la mascota + cuenta regresiva → paneles en 2 columnas), vestido estilo Omarchy: ventanas cuadradas de terminal, mono, fondo con pixeles y temas intercambiables. Look oscuro único a propósito. */
 :root{

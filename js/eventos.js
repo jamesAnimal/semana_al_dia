@@ -1,4 +1,4 @@
-// Semana al Día · clases recurrentes, entregas y cuenta regresiva.
+// seman@_al_día · clases recurrentes, entregas y cuenta regresiva.
 function allEvents(){
   const ev = [];
   for (const r of DATA.ramos) for (let w = 1; w <= SEMANAS_CLASES; w++) for (const s of r.secciones){

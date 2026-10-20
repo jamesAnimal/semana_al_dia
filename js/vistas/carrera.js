@@ -1,4 +1,4 @@
-// Semana al Día · pestaña Carrera (malla y avance).
+// seman@_al_día · pestaña Carrera (malla y avance).
 const ROMAN = ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
 const ESTADO = {aprobado:'✓ Cursada', cursando:'En curso', pendiente:'Por cursar'};
 function vCarrera(){
