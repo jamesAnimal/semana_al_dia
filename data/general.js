@@ -158,12 +158,12 @@ window.DATA = {
       'Últimas horas pa {e}. Respira y mándala.',
     ],
     chistes: [
-      'En mi máquina corre compa. El problema es tu PC rasca.',
+      'En mi máquina corre compa. El problema es tu PC.',
       'No es bug, es feature, te lo dejo en dos lucas.',
       'Le hice push a main un viernes a las 11. Ahora vivo en la clandestinidad.',
       '¿Comentarios en el código? Ni ahí, el código se explica solo…',
       'Mi código no tiene bugs, tiene sorpresas.',
-      'Hice un try-catch gigante y ahora nada falla. Seguridad nivel población.',
+      'Hice un try-catch gigante y ahora nada falla. Seguridad nivel dios.',
       '¿Testing? Yo testeo en producción, como los valientes.',
       'SELECT * es como pedir completo con todo: rico, pero después te arrepentis.',
       'Tengo 99 problemas y 98 son NullPointerException.',
@@ -184,7 +184,7 @@ window.DATA = {
       'Santa Lourdes, patrona de las claves primarias, dijo: "Ninguna tabla sin su PK, hijo mío".',
     ],
     alertas: ['Lee las alertas amarillas, que no te pillen volando.'],
-    doo: ['PreparedStatement o nada, causa.', '¿SQL en la vista? Ni ahí. Usa el DAO.'],
+    doo: ['PreparedStatement o nada.', '¿SQL en la vista? Ni ahí. Usa el DAO.'],
     bd: ['IS NULL, no = NULL. Te estoy cachando.', 'AND antes que OR. Paréntesis, por la cresta.'],
   },
 };
