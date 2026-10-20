@@ -205,7 +205,7 @@ ul.clean li::marker{color:var(--accent)}
 .xl-wrap{overflow-x:auto;margin:0 calc(50% - min(50vw - 16px, 760px)) 8px}
 .xl{--xl-navy:color-mix(in srgb,var(--accent) 26%,var(--bg));--xl-azul:color-mix(in srgb,var(--accent) 78%,var(--surface));--xl-naranjo:color-mix(in srgb,var(--r3) 80%,var(--surface));--xl-crema:color-mix(in srgb,var(--sun) 16%,var(--surface));--xl-celeste:color-mix(in srgb,var(--accent) 10%,var(--surface));--xl-rojo:color-mix(in srgb,var(--coral) 85%,var(--surface));--xl-durazno:color-mix(in srgb,var(--r3) 18%,var(--surface))}
 .xl{border-collapse:collapse;table-layout:fixed;width:100%;min-width:900px;font-size:12px;line-height:1.3}
-.xl .c-marca{width:62px}.xl .c-fecha{width:52px}.xl .c-entrega{width:86px}.xl .c-lbl{width:110px}
+.xl .c-marca{width:62px}.xl .c-fecha{width:52px}.xl .c-entrega{width:132px}.xl .c-lbl{width:110px}
 .xl th,.xl td{border:1px solid var(--line);padding:6px 5px;text-align:center;vertical-align:middle;font-weight:400;overflow-wrap:anywhere;background:var(--surface)}
 .xl tbody tr:nth-child(odd) td,.xl tr.cel td{background:var(--xl-celeste)}
 .xl small{display:block;font-size:10.5px;color:var(--muted)}
@@ -222,7 +222,7 @@ ul.clean li::marker{color:var(--accent)}
 .xl .profe{font-weight:700;color:var(--on);background:var(--xl-azul)!important}
 .xl .profe.ref{font-size:10.5px;overflow-wrap:normal;word-break:keep-all}
 .xl td.hay{background:var(--xl-durazno)!important}
-.xl-ev{font-weight:800;font-size:11px;margin:0 3px}
+.xl-ev{display:block;text-align:left;font-size:11px;line-height:1.45}
 .xl tr.eft td:not(.marca){border:0;background:transparent!important}
 .xl tr.eft td:last-child{background:var(--xl-rojo)!important;color:var(--on);font-weight:800}
 .xl-lk{font-weight:700;color:var(--accent)}

@@ -2,7 +2,6 @@
 // marca de semana actual, Fecha, Entrega, rótulos, una columna por profe y Reforzamiento a la derecha.
 const ORDEN_EXCEL = ['r1', 'r3', 'r2'];   // mismo orden de ramos que el Excel: CBBDD, Cloud, Ética
 const evTipo = e => !e || !e.n || e.n==='????' ? '?' : /EFT/.test(e.n) ? 'EFT' : /Sumativa/.test(e.n) ? 'Sumativa' : /Formativa/.test(e.n) ? 'Formativa' : e.n;
-const evAbr = t => ({Formativa:'Form.', Sumativa:'Sum.'})[t] || t;
 
 function vClases(){
   const ramos = [...DATA.ramos].sort((a,b) => ORDEN_EXCEL.indexOf(a.id) - ORDEN_EXCEL.indexOf(b.id));
@@ -27,8 +26,7 @@ function vClases(){
   const body = semanas.map(w => {
     const fecha = (ramos.flatMap(r => r.evaluaciones).find(e => e.sem===w && e.entrega)||{}).entrega;
     const evs = ramos.map(r => r.evaluaciones.find(e => e.sem===w)), tipos = evs.map(evTipo);
-    const entrega = evs.every(e => e && e.n===evs[0].n && e.n!=='????') ? esc(evs[0].n)
-      : tipos.every(t => t==='?') ? '' : tipos.every(t => t===tipos[0]) ? esc(tipos[0]) : ramos.map((r,i) => `<span class="xl-ev" style="color:var(--${r.id})" title="${esc(r.corto)}: ${esc(tipos[i])}">${esc(evAbr(tipos[i]))}</span>`).join('');
+    const entrega = ramos.map((r,i) => `<span class="xl-ev"><b style="color:var(--${r.id})">${esc(r.corto.split(' ').pop())}:</b> ${tipos[i]==='?' ? '????' : esc(tipos[i])}</span>`).join('');
     const grab = c => { const u = (c.sc.grabaciones||{})[w]; return `<td>${u ? `<a class="xl-lk" href="${esc(u)}" target="_blank" rel="noopener">Grabación</a>` : ''}</td>`; };
     const taller = x => { const t = x.ev.find(e => weekOf(e.d)===w); return `<td class="${t?'hay':''}">${t ? `<a class="xl-lk" href="${esc(t.link||'#')}" target="_blank" rel="noopener">${esc(t.titulo.replace(' '+x.r.corto, ''))}</a><small>${ddmm(t.d)} · ${hhmm(t.d)}</small>` : ''}</td>`; };
     return `<tr class="${w===CUR?'cur':''}"><td class="marca">${w===CUR?'<span>Semana actual</span>':''}</td><td class="fx">${fecha ? ddmm(dt(fecha)) : '????'}</td><td class="fx">${entrega}</td>${lbl('Semana '+w)}${cols.map(grab).join('')}${refs.map(taller).join('')}</tr>`;
@@ -38,5 +36,5 @@ function vClases(){
   return `<h1>Clases</h1>
   <p class="aviso"><b aria-hidden="true">!</b><span>¿Vas a entrar a la clase de otro profe? Dale, pero con respeto: sin interrumpir, y las preguntas déjaselas primero a los de esa sección. Y si te pillan… no conoces esta página 🤫 XD</span><b aria-hidden="true">!</b></p>
   <div class="xl-wrap"><table class="xl"><colgroup><col class="c-marca"><col class="c-fecha"><col class="c-entrega"><col class="c-lbl"></colgroup><thead>${head}</thead><tbody>${body}${pie}</tbody></table></div>
-  <p class="small muted">Fecha = cierre de las entregas de esa semana (23:59). Entrega: si cambia según el ramo, sale una por ramo con su color (Form. = formativa, Sum. = sumativa, ? = todavía no se sabe).</p>`;
+  <p class="small muted">Fecha = cierre de las entregas de esa semana (23:59).</p>`;
 }
