@@ -1,0 +1,145 @@
+// Ramo CBBDD · Consulta de Bases de Datos. Semanas, actividades, entregas y noticias de este ramo.
+// Lo editan las personas y sus agentes (Claude, Gemini…). Reglas en AGENTS.md.
+// El id (r1/r2/r3) define el color del ramo: no lo cambies.
+DATA.ramos.push({
+  id: 'r1',
+  sigla: 'PRY2205',
+  corto: 'CBBDD',
+  nombre: 'Consulta de Bases de Datos',
+  icono: 'db',
+  secciones: [
+    {
+      profe: 'Rodrigo Opazo',
+      seccion: '????',
+      dia: 4,
+      hora: '20:00',
+      link: 'https://us.bbcollab.com/collab/ui/session/guest/01f7192375ea433288a7fc8839d15dd0',
+    },
+    {
+      profe: 'Eithel González',
+      seccion: '005A',
+      dia: 3,
+      hora: '21:00',
+      link: 'https://us.bbcollab.com/guest/0bfe64ff20bd4fee9440601c43c25a36',
+    },
+    {
+      profe: 'Lourdes Townsend (por ahora Eithel)',
+      seccion: '006A',
+      dia: 3,
+      hora: '21:00',
+      link: 'https://us.bbcollab.com/guest/0bfe64ff20bd4fee9440601c43c25a36',
+    },
+  ],
+  evaluaciones: [
+    {sem: 1, n: 'Formativa 1', modo: 'Individual (o dupla, ver alerta)', entrega: '2026-10-26T23:59'},
+    {sem: 2, n: '????'},
+    {sem: 3, n: '????'},
+    {sem: 4, n: '????'},
+    {sem: 5, n: '????'},
+    {sem: 6, n: '????'},
+    {sem: 7, n: '????'},
+    {sem: 8, n: '????'},
+    {sem: 9, n: 'EFT ????'},
+  ],
+  recursos: [
+    {
+      t: 'Sesión sincrónica (Collaborate)',
+      u: 'https://us.bbcollab.com/guest/0bfe64ff20bd4fee9440601c43c25a36',
+      k: 'video',
+    },
+    {
+      t: 'Descargar SQL Developer',
+      u: 'https://www.oracle.com/database/sqldeveloper/technologies/download/',
+      k: 'download',
+    },
+    {t: 'Consola Oracle Cloud', u: 'https://cloud.oracle.com', k: 'arrow'},
+    {t: 'Caso Rent a Car S1 (PDF)', u: null, k: 'file'},
+    {t: 'Scripts S1: usuario y tablas', u: null, k: 'file'},
+  ],
+  conceptos: [
+    ['SELECT', 'Pide columnas de una o más tablas.'],
+    ['Alias', 'Nombre más claro para una columna o cálculo.'],
+    ['Concatenación', 'Unir textos con ||.'],
+    ['WHERE', 'Filtra filas según una condición.'],
+    ['BETWEEN · IN · LIKE', 'Rango, lista de valores y patrón de texto.'],
+    ['IS NULL', 'La única forma correcta de buscar nulos.'],
+    ['ORDER BY', 'Ordena el resultado.'],
+    ['Variables de sustitución', '&variable: Oracle te pide el valor al ejecutar.'],
+    ['DML · DDL · DCL', 'Manipular datos · definir estructuras · controlar permisos.'],
+  ],
+  semanas: {
+    '1': {
+      tema: 'Introducción a la consulta de bases de datos',
+      resumen: [
+        'Repaso del modelo relacional: tablas, atributos, tuplas y claves primarias.',
+        'Tipos de comandos SQL (DML, DDL, DCL), palabras reservadas, cláusulas y sentencias.',
+        'SELECT básico: asterisco, alias, cálculos y concatenación.',
+        'WHERE (BETWEEN, IN, LIKE, IS NULL), ORDER BY y variables de sustitución en Oracle.',
+      ],
+      actividad: {
+        nombre: 'Relacionando conceptos básicos de SQL',
+        tipo: 'Formativa',
+        modo: 'Individual',
+        pond: null,
+        entrega: '2026-10-26T23:59',
+        descripcion: 'Caso Ruta Libre Rent a Car: responder preguntas conceptuales y armar consultas SELECT con alias, operadores y filtros.',
+        requisitos: [
+          'Leer el caso Rent a Car y la guía de la semana.',
+          'Responder las preguntas conceptuales sobre bases de datos relacionales y SQL.',
+          'Construir y probar las consultas SELECT pedidas (alias, operadores, filtros).',
+          'Palabras reservadas en MAYÚSCULAS; tablas y columnas en minúsculas.',
+        ],
+        pasos: [
+          'Como ADMIN, ejecuta script_crea_user_S1.sql (crea el usuario PRY2205_EJERCICIO_S1).',
+          'Crea una conexión en SQL Developer con ese usuario.',
+          'Ejecuta script_crea_pobla_tablas_S1.sql para crear y poblar las tablas.',
+          'Resuelve los ejercicios del caso.',
+        ],
+        entregables: [
+          {k: 'file', t: 'Documento con respuestas y capturas'},
+          {k: 'github', t: 'En la carpeta "Semana 1" de tu repo GitHub PRIVADO'},
+          {k: 'users', t: 'Docente agregado como colaborador'},
+        ],
+        pauta: null,
+      },
+      profe: [
+        'La sesión es los miércoles a las 21:00 y queda grabada.',
+        'Las bases de datos autónomas de Oracle Cloud se apagan tras 7 días sin uso: entra y reactívala.',
+        '¿Sin cuenta Oracle Cloud? Avísale al profe para que te mande la invitación.',
+        'Para preguntar en el foro: qué intentabas, el código o captura y el mensaje de error exacto.',
+      ],
+      alertas: [
+        'El foro dice que la formativa es individual, pero el anuncio dice que las formativas son en dupla. Confirma con el profe.',
+        'El foro nombra dos usuarios distintos para agregar como colaborador en GitHub (eigonzalez-docente e It-campusvirtual-bd). Confirma cuál.',
+        'El caso dice que te conectes con PRY2205_DESAFIOS_S1, pero el script crea PRY2205_EJERCICIO_S1. Usa ese usuario.',
+      ],
+      clases: [],
+    },
+  },
+  eventos: [
+    {fecha: '2026-10-26T23:59', titulo: 'Formativa CBBDD S1', ramo: 'r1', tipo: 'entrega'},
+  ],
+  noticias: [
+    {
+      fecha: '2026-10-20',
+      tag: 'Herramientas',
+      ramo: 'r1',
+      titulo: 'Reactiva tu base de datos de Oracle Cloud',
+      texto: 'Las bases autónomas se apagan tras 7 días sin uso. Sin cuenta todavía: avísale al profe de CBBDD.',
+    },
+    {
+      fecha: '2026-10-20',
+      tag: 'Taller',
+      ramo: 'r1',
+      titulo: 'Talleres de reforzamiento de CBBDD',
+      texto: 'Los dicta Eithel González para preparar sumativas y EFT. Calendario: ????',
+    },
+    {
+      fecha: '2026-10-19',
+      tag: 'Aviso',
+      ramo: 'r1',
+      titulo: 'Eithel reemplaza por un tiempo a la profe Lourdes Townsend',
+      texto: 'Formativas en dupla y sumativas individuales, según el anuncio.',
+    },
+  ],
+});
