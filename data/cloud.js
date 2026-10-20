@@ -19,7 +19,7 @@ DATA.ramos.push({
     {
       profe: 'Ignacio Pastenet',
       seccion: '003A',
-      dia: null,
+      dia: null,   // PENDIENTE: horario de Ignacio después de la semana 1
       hora: null,
       link: 'https://us.bbcollab.com/guest/1b14ce788f564e3092bf7b49ccc785c0',
       excepciones: {'1': {dia: 2, hora: '22:00'}},
@@ -102,6 +102,7 @@ DATA.ramos.push({
       },
       profe: [
         'Primera sesión: martes 20/10 a las 22:00 con Ignacio Pastenet.',
+        'Con Danny Friz, la clase de la semana 1 es el miércoles a las 22:00 (no el jueves).',
         'Ojo: la semana 2 ya es Sumativa (20%), del 27/10 al 02/11.',
         'Marca como completados los recursos del AVA para ver tu avance.',
         'Foro de presentación "Conociéndonos un poco más": quién eres, a qué te dedicas, qué te gusta y si ya has usado la nube (AWS, Azure…).',
@@ -110,9 +111,7 @@ DATA.ramos.push({
         'Hay 3 talleres de reforzamiento con Ignacio, antes de cada sumativa (28/10, 18/11 y 09/12, de 19:00 a 21:00).',
       ],
       alertas: [
-        'Semana 1 con Danny Friz es el miércoles a las 22:00 (no el jueves).',
         'El anuncio de la semana 1 dice "Fecha límite: [Indicar fecha]": el profe no la completó. Según el calendario del ramo, la formativa cierra el lunes 26/10.',
-        'Horario de Ignacio después de la semana 1: ????',
       ],
       clases: [],
     },

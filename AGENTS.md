@@ -47,12 +47,13 @@ data/cloud.js       ramo r3 · Introducción al Cloud Computing
 1. Todo en **español** (chileno informal está bien).
 2. Si falta un dato: **`????`**. Nunca inventes fechas, profes, links ni ponderaciones.
 3. **Alertas** (amarillas con "!"): SOLO para contradicciones o errores del material (por ejemplo: el foro dice individual y el anuncio dice dupla, una plantilla sin rellenar o dos usuarios distintos para GitHub). No son recordatorios.
-4. Las entregas llevan su semana o número: `Formativa CBBDD S1`, `Sumativa 1 Intro Cloud (20%)`. En la tarjeta de próximas entregas se agrupan todas las del mismo día.
-5. La **mascota no tiene nombre** por ahora. Sus frases (`gata` en `general.js`) son humor dev "flaite" chileno. Para agregar chistes, edita `gata.chistes`.
-6. **Malla:** estados neutros para todo el curso: `aprobado` se muestra como "✓ Cursada", `cursando` como "En curso" y `pendiente` como "Por cursar". No reflejan notas de nadie.
-7. Los resúmenes son **propios y cortos**. No copies textos completos de Duoc: los documentos tienen derechos reservados.
-8. No publiques contraseñas (los scripts SQL traen claves), datos personales, correos personales ni notas.
-9. Si dos fuentes no calzan, usa la más oficial (AVA o el calendario del ramo) y deja una alerta explicando la diferencia.
+4. **Datos que faltan** (un horario o un profe que no se sabe): van como `????` en su campo y, si hace falta explicar, con un comentario `// PENDIENTE: ...` en el archivo de `data/`. Nunca como alerta: las alertas las ve todo el curso, los comentarios solo quien mantiene la página.
+5. Las entregas llevan su semana o número: `Formativa CBBDD S1`, `Sumativa 1 Intro Cloud (20%)`. En la tarjeta de próximas entregas se agrupan todas las del mismo día.
+6. La **mascota no tiene nombre** por ahora. Sus frases (`gata` en `general.js`) son humor dev "flaite" chileno. Para agregar chistes, edita `gata.chistes`.
+7. **Malla:** estados neutros para todo el curso: `aprobado` se muestra como "✓ Cursada", `cursando` como "En curso" y `pendiente` como "Por cursar". No reflejan notas de nadie.
+8. Los resúmenes son **propios y cortos**. No copies textos completos de Duoc: los documentos tienen derechos reservados.
+9. No publiques contraseñas (los scripts SQL traen claves), datos personales, correos personales ni notas.
+10. Si dos fuentes no calzan, usa la más oficial (AVA o el calendario del ramo) y deja una alerta explicando la diferencia.
 
 ## Rutina semanal
 
