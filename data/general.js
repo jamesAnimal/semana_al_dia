@@ -6,7 +6,6 @@ window.DATA = {
   hoySimulado: null,
   bimestre: {nombre: 'Bimestre 4', inicio: '2026-10-19', semanas: 9},
   ramos: [],
-  grabaciones: {},
   eventos: [
     {fecha: '2026-10-31', titulo: 'Día de las Iglesias Evangélicas', tipo: 'feriado'},
     {fecha: '2026-11-01', titulo: 'Día de Todos los Santos', tipo: 'feriado'},

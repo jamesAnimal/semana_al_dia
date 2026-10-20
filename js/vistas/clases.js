@@ -1,16 +1,27 @@
-// seman@_al_día · pestaña Clases y grabaciones.
+// seman@_al_día · pestaña Clases y grabaciones. Todo separado por ramo y por profe (sección).
+const proxClase = (r, sc) => EVENTS.find(e => e.ramo===r.id && e.tipo==='clase' && e.profe===sc.profe && e.seccion===sc.seccion && e.d > NOW);
+const cuanto = d => { const p = parts(d); return `en ${p.D?p.D+' d ':''}${p.H} h ${p.M} min`; };
+
+function filaSeccion(r, sc){
+  const nx = proxClase(r, sc);
+  const when = nx ? `<span class="when"><b>${nx.d.getDate()}</b><span>${DOW[nx.d.getDay()]} ${hhmm(nx.d)}</span></span>` : `<span class="when"><b>?</b><span>????</span></span>`;
+  const sub = nx ? cuanto(nx.d) : (sc.dia ? 'Sin más clases este bimestre' : 'Horario: ????');
+  return `<div class="ag">${when}<span class="grow"><b>${esc(sc.profe)}</b><br><span class="small muted">Sección ${esc(sc.seccion||'????')} · ${sub}</span></span>${link('Entrar', sc.link, 'video')}</div>`;
+}
+
+function grabacionesRamo(r){
+  const semanas = Array.from({length:Math.min(CUR, SEMANAS_CLASES)}, (_,i) => i+1);
+  return `<div class="panel"><h2 style="color:var(--${r.id})">${esc(r.corto)}</h2><div class="agenda">${r.secciones.map(sc => `<div class="rec-row" style="--rc:var(--${r.id})"><div class="who">${icon('user')}<b>${esc(sc.profe)}</b><span class="small muted">Sección ${esc(sc.seccion||'????')}</span></div>
+    <div class="recs">${semanas.map(w => { const u = (sc.grabaciones||{})[w];
+      return u ? `<a class="play" href="${esc(u)}" target="_blank" rel="noopener"><i style="background:var(--${r.id})"></i>S${w}</a>` : `<span class="play off" title="Sin grabación todavía"><i></i>S${w}</span>`; }).join('')}</div></div>`).join('')}</div></div>`;
+}
+
 function vClases(){
   return `<h1>Clases</h1>
-  <section class="cards-3">${DATA.ramos.map(r => { const nx = EVENTS.find(e => e.ramo===r.id && e.tipo==='clase' && e.d > NOW);
-    return `<article class="rcard"><div class="rhead ${r.id}"><span class="ricon">${icon(r.icono)}</span><span class="t"><b>${esc(r.corto)}</b><span>Próxima clase</span></span></div>
-      <div class="rbody">${nx ? `<div><p class="topic">${DOWL[nx.d.getDay()]} ${ddmm(nx.d)} · ${hhmm(nx.d)}</p><p class="small muted">${esc(nx.profe)} · sección ${esc(nx.seccion||'????')}</p></div>${tiles(nx.d, true)}
-        <div class="links">${link('Entrar a la clase', nx.link, 'video')}<a class="lk" href="${gcal(nx.titulo, nx.d, 60)}" target="_blank" rel="noopener">${icon('cal')}Google Calendar</a></div>`
-        : `<div class="empty">${r.secciones.some(x => x.dia)?'No quedan clases este bimestre.':'Horario: ????'}</div>`}
-        <span class="eyebrow">Secciones</span>
-        <div class="agenda">${r.secciones.map(sc => `<div class="ag"><span class="when"><b>${sc.dia?DOW[sc.dia]:'?'}</b><span>${sc.hora||'????'}</span></span><span class="grow"><b>${esc(sc.profe)}</b><br><span class="small muted">Sección ${esc(sc.seccion||'????')}</span></span>${link('Entrar', sc.link, 'video')}</div>`).join('')}</div>
-      </div></article>`; }).join('')}</section>
-  <section class="panel"><div class="panel-head"><h2>Grabaciones</h2><span class="small muted">Los links se activan cuando se cargan</span></div>
-    <div class="rec-grid" style="grid-template-columns:64px repeat(${DATA.ramos.length},minmax(0,1fr))"><span></span>${DATA.ramos.map(r => `<span class="rec-head">${esc(r.corto)}</span>`).join('')}
-    ${Array.from({length:SEMANAS_CLASES},(_,i) => SEMANAS_CLASES-i).filter(w => w <= CUR).map(w => `<span class="wk">S${w}<small>${ddmm(weekStart(w))}</small></span>${DATA.ramos.map(r => `<div class="recs">${((DATA.grabaciones[r.id]||{})[w]||[]).map(g => `<span class="play" title="Link por cargar"><i style="background:var(--${r.id})"></i>${esc(g)}</span>`).join('') || '<span class="small muted">—</span>'}</div>`).join('')}`).join('')}</div>
-  </section>`;
+  <section class="cards-3">${DATA.ramos.map(r => {
+    const secs = [...r.secciones].sort((a,b) => ((proxClase(r,a)||{}).d||Infinity) - ((proxClase(r,b)||{}).d||Infinity));
+    return `<article class="rcard"><div class="rhead ${r.id}"><span class="ricon">${icon(r.icono)}</span><span class="t"><b>${esc(r.corto)}</b><span>Próxima clase por profe</span></span></div>
+      <div class="rbody"><div class="agenda">${secs.map(sc => filaSeccion(r, sc)).join('')}</div></div></article>`; }).join('')}</section>
+  <h2>Grabaciones</h2>
+  <section class="cards-3">${DATA.ramos.map(grabacionesRamo).join('')}</section>`;
 }

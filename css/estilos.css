@@ -195,14 +195,14 @@ ul.clean li::marker{color:var(--accent)}
 .empty{padding:14px;text-align:center;color:var(--muted);border:1px dashed var(--line);font-size:13px}
 
 /* clases */
-.rec-grid{display:grid;grid-template-columns:64px repeat(2,minmax(0,1fr));gap:8px;align-items:center}
-.rec-grid .wk{font-weight:800}
-.rec-grid .wk small{display:block;font-size:10.5px;color:var(--muted);font-weight:400}
-.recs{display:flex;gap:6px;flex-wrap:wrap}
+.rec-row{font-size:13px;background:var(--surface-2);border:1px solid var(--line);border-left:3px solid var(--rc,var(--accent));padding:8px 10px}
+.rec-row .who{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.recs{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
 .play{display:inline-flex;align-items:center;gap:6px;padding:2px 8px 2px 3px;font-size:11.5px;font-weight:700;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);text-decoration:none}
 .play i{width:18px;height:18px;display:grid;place-items:center;color:var(--on);font-style:normal}
 .play i::before{content:"";border-left:6px solid currentColor;border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:2px}
-.rec-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.play.off{opacity:.4;font-weight:500}
+.play.off i{background:var(--line)}
 
 /* calendario */
 .cal-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
@@ -299,7 +299,6 @@ footer{font-size:12px;color:var(--muted);padding-block:0 32px;position:relative;
   .day .dots{display:flex}
   .weekstrip{grid-template-columns:repeat(7,minmax(80px,1fr));overflow-x:auto}
   .stack-legend{grid-template-columns:1fr}
-  .rec-grid{grid-template-columns:50px repeat(2,minmax(0,1fr))}
 }
 @media (max-width:520px){
   .cat-card{flex-direction:column;align-items:flex-start}

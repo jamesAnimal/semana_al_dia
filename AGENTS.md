@@ -37,6 +37,7 @@ data/cloud.js       ramo r3 · Introducción al Cloud Computing
 
 - Fechas: `'AAAA-MM-DD'` (todo el día) o `'AAAA-MM-DDTHH:MM'` (hora de Chile).
 - Días de la semana en `secciones`: 1 = lunes … 6 = sábado. `excepciones: {1: {dia: 3, hora: '22:00'}}` cambia una semana puntual.
+- Grabaciones: van en cada sección, por semana: `grabaciones: {1: 'https://...', 2: 'https://...'}`. Las semanas sin link salen apagadas.
 - Eventos: `tipo: 'entrega' | 'clase' | 'feriado'`. Las clases recurrentes salen solas de `secciones`; en `eventos` solo van talleres, entregas y cosas puntuales.
 - `semanas: {1: {tema, resumen: [...], actividad: {...}, profe: [...], alertas: [...], clases: []}}`.
 - `actividad.pauta`: `[['criterio', puntos], ...]` o `null` si no se conoce.

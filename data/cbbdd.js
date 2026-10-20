@@ -32,14 +32,14 @@ DATA.ramos.push({
   ],
   evaluaciones: [
     {sem: 1, n: 'Formativa 1', modo: 'Individual (o dupla, ver alerta)', entrega: '2026-10-26T23:59'},
-    {sem: 2, n: '????'},
-    {sem: 3, n: '????'},
-    {sem: 4, n: '????'},
-    {sem: 5, n: '????'},
-    {sem: 6, n: '????'},
-    {sem: 7, n: '????'},
-    {sem: 8, n: '????'},
-    {sem: 9, n: 'EFT ????'},
+    {sem: 2, n: '????', entrega: '2026-11-02T23:59'},
+    {sem: 3, n: '????', entrega: '2026-11-09T23:59'},
+    {sem: 4, n: '????', entrega: '2026-11-16T23:59'},
+    {sem: 5, n: '????', entrega: '2026-11-23T23:59'},
+    {sem: 6, n: '????', entrega: '2026-11-30T23:59'},
+    {sem: 7, n: '????', entrega: '2026-12-07T23:59'},
+    {sem: 8, n: '????', entrega: '2026-12-14T23:59'},
+    {sem: 9, n: 'EFT ????', entrega: '2026-12-20T23:59'},
   ],
   recursos: [
     {
@@ -113,6 +113,7 @@ DATA.ramos.push({
         'Para preguntar en el foro: qué intentabas, el código o captura y el mensaje de error exacto.',
       ],
       alertas: [
+        'Sección 006A: la profe Lourdes Townsend sigue ausente. Mientras tanto, las clases las hace el profe Eithel González, los miércoles a las 21:00.',
         'El foro dice que la formativa es individual, pero el anuncio dice que las formativas son en dupla. Además, la guía de trabajo colaborativo dice que solo un integrante sube la entrega, mientras que el foro pide subirla al repo GitHub privado de cada uno. Confirma con el profe.',
         'El foro nombra dos usuarios distintos para agregar como colaborador en GitHub (eigonzalez-docente e It-campusvirtual-bd). Confirma cuál.',
         'El caso dice que te conectes con PRY2205_DESAFIOS_S1, pero el script crea PRY2205_EJERCICIO_S1. Usa ese usuario.',
@@ -121,7 +122,16 @@ DATA.ramos.push({
     },
   },
   eventos: [
+    // Mismas fechas de cierre para todos los ramos (las pone el sistema). Tipo de evaluación: ????
     {fecha: '2026-10-26T23:59', titulo: 'Formativa CBBDD S1', ramo: 'r1', tipo: 'entrega'},
+    {fecha: '2026-11-02T23:59', titulo: 'Entrega CBBDD S2', ramo: 'r1', tipo: 'entrega'},
+    {fecha: '2026-11-09T23:59', titulo: 'Entrega CBBDD S3', ramo: 'r1', tipo: 'entrega'},
+    {fecha: '2026-11-16T23:59', titulo: 'Entrega CBBDD S4', ramo: 'r1', tipo: 'entrega'},
+    {fecha: '2026-11-23T23:59', titulo: 'Entrega CBBDD S5', ramo: 'r1', tipo: 'entrega'},
+    {fecha: '2026-11-30T23:59', titulo: 'Entrega CBBDD S6', ramo: 'r1', tipo: 'entrega'},
+    {fecha: '2026-12-07T23:59', titulo: 'Entrega CBBDD S7', ramo: 'r1', tipo: 'entrega'},
+    {fecha: '2026-12-14T23:59', titulo: 'Entrega CBBDD S8', ramo: 'r1', tipo: 'entrega'},
+    {fecha: '2026-12-20T23:59', titulo: 'Cierre EFT CBBDD (abre jue 10/12)', ramo: 'r1', tipo: 'entrega'},
   ],
   noticias: [
     {
