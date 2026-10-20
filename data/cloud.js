@@ -19,10 +19,9 @@ DATA.ramos.push({
     {
       profe: 'Ignacio Pastenet',
       seccion: '003A',
-      dia: null,   // PENDIENTE: horario de Ignacio después de la semana 1
-      hora: null,
+      dia: 2,
+      hora: '22:00',
       link: 'https://us.bbcollab.com/guest/1b14ce788f564e3092bf7b49ccc785c0',
-      excepciones: {'1': {dia: 2, hora: '22:00'}},
     },
   ],
   evaluaciones: [
@@ -63,6 +62,9 @@ DATA.ramos.push({
       k: 'video',
     },
     {t: 'Video de la guía S1 (placa madre)', u: 'https://www.youtube.com/watch?v=b2pd3Y6aBag', k: 'video'},
+    {t: 'Videos S1: memoria, placa madre y CPU vs GPU', u: null, k: 'video'},
+    {t: 'Video técnico S1: Amazon EC2 (Duoc)', u: null, k: 'video'},
+    {t: 'Lecturas AWS: qué es EC2 y qué es una máquina virtual', u: null, k: 'book'},
   ],
   conceptos: [
     ['CPU', 'El procesador: ejecuta las instrucciones.'],
@@ -107,6 +109,8 @@ DATA.ramos.push({
         'Marca como completados los recursos del AVA para ver tu avance.',
         'Foro de presentación "Conociéndonos un poco más": quién eres, a qué te dedicas, qué te gusta y si ya has usado la nube (AWS, Azure…).',
         'Dudas: en el foro de consultas o por mensajería de Blackboard.',
+        'Antes del cuestionario, mira sí o sí el video técnico de EC2: muestra cómo vCPU, RAM, EBS y la AMI reemplazan al PC físico.',
+        'Pregunta del foro S1: ¿sabías que puedes crear un servidor en AWS sin comprar un computador? Comenta ahí.',
         'El profe recomienda ir preparando alguna certificación cloud (AWS, Azure o Google Cloud).',
         'Hay 3 talleres de reforzamiento con Ignacio, antes de cada sumativa (28/10, 18/11 y 09/12, de 19:00 a 21:00).',
       ],

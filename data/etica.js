@@ -15,8 +15,6 @@ DATA.ramos.push({
       hora: '21:00',
       link: 'https://us.bbcollab.com/guest/42e625a421324b26b11ef91112576498',
     },
-    // PENDIENTE: la sección del martes 19:00 no trae profe ni link en el Excel del curso
-    {profe: '????', seccion: '????', dia: 2, hora: '19:00', link: null},
     {
       profe: 'Antonia Encina',
       seccion: '003A',
