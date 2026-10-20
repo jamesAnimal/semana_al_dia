@@ -4,6 +4,19 @@ Página de solo lectura donde un curso de **Analista Programador (Duoc UC, modal
 
 La mantienen varias personas, cada una con su propio agente (Claude Code, Gemini, etc.). **Este archivo manda para todos los agentes.**
 
+## Si eres nuevo
+
+1. Pídele a quien administra el repo que te agregue como colaborador (sin eso no puedes hacer push).
+2. Clona el repo y ábrelo en tu IDE. Para ver la página usa Live Server (o abre `index.html` con doble clic).
+3. Antes de editar: `git pull` y avisa en el grupo qué ramo vas a actualizar.
+4. El material (anuncios, foros, guías) lo tiene cada persona en su PC: el agente debe preguntarle dónde está, no adivinar rutas.
+
+## Cómo trabaja el agente
+
+- **Pide permiso antes de editar** cualquier archivo y **antes de cada commit o push**. Una pregunta se responde, sin editar. Nada de cambios "de paso": lo extra se propone aparte.
+- Se carga **solo la semana actual** de cada ramo, aunque la guía traiga semanas futuras. Así todos los ramos avanzan parejo.
+- Antes de hacer push, prueba que la página cargue sin errores.
+
 ## Estructura
 
 ```
@@ -16,7 +29,7 @@ js/                 lógica. Un archivo por tema, se cargan en el orden de index
   mascota.js          la mascota y sus frases
   componentes.js      chips, links y alertas que usan varias vistas
   calendario.js       calendario chico del inicio
-  vistas/<pestaña>.js una vista por pestaña (inicio, ramos, clases, noticias, recursos, carrera)
+  vistas/<pestaña>.js una vista por pestaña (inicio, ramos, clases, noticias, recursos, carrera, readme)
   app.js              pestañas, temas, clics y arranque (va al final)
 assets/mascota.webp la mascota (pájaro azul con polerón "it works on my machine").
 data/general.js     bimestre, feriados, noticias generales, recursos, software, talleres, malla, frases de la mascota.
@@ -39,6 +52,10 @@ data/cloud.js       ramo r3 · Introducción al Cloud Computing
 - Días de la semana en `secciones`: 1 = lunes … 6 = sábado. `excepciones: {1: {dia: 3, hora: '22:00'}}` cambia una semana puntual.
 - Grabaciones: van en cada sección, por semana: `grabaciones: {1: 'https://...', 2: 'https://...'}`. Las semanas sin link salen apagadas.
 - Eventos: `tipo: 'entrega' | 'clase' | 'feriado'`. Las clases recurrentes salen solas de `secciones`; en `eventos` solo van talleres, entregas y cosas puntuales.
+- Talleres de reforzamiento: en `eventos`, con `tipo: 'clase'`, `profe` y `link`. Salen en la pestaña Clases, bajo cada ramo.
+- `experiencias`: solo la experiencia en curso, con el nombre que trae el AVA. Se cambia cuando empieza la siguiente.
+- `modo` (en `evaluaciones` y `actividad`): `'Individual'` o `'Grupal'`. Sale como etiqueta junto a cada entrega.
+- `recursos` sin link (`u: null`) se guardan igual, pero no salen en la pestaña Recursos.
 - `semanas: {1: {tema, resumen: [...], actividad: {...}, profe: [...], alertas: [...], clases: []}}`.
 - `actividad.pauta`: `[['criterio', puntos], ...]` o `null` si no se conoce.
 - `hoySimulado` en `data/general.js` debe quedar en `null` (solo se usa para probar).
@@ -63,7 +80,7 @@ data/cloud.js       ramo r3 · Introducción al Cloud Computing
 2. Lee el material nuevo del ramo (anuncios, foros, guías, instrucciones, pautas, Excel de links del curso).
 3. Actualiza `data/<ramo>.js`: agrega la semana nueva en `semanas`, completa `evaluaciones` y `eventos`, y suma `noticias` si corresponde. Actualiza `actualizado` en `data/general.js`.
 4. Abre `index.html` en el navegador (o con Live Server) y revisa.
-5. Commit en español, claro (`Ética: semana 2`), y `git push`. Vercel o GitHub Pages publica solo.
+5. Commit en español, claro (`Ética: semana 2`), y `git push`. Vercel publica solo.
 6. Al terminar, resume en pocas líneas qué cambió y qué quedó con `????` o con dudas.
 
 ## Diseño (por si te piden cambios visuales)

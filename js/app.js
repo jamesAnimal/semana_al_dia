@@ -17,7 +17,7 @@ if (DATA.hoySimulado){ $('#demo').hidden = false; $('#demo-text').textContent = 
 
 window.addEventListener('hashchange', () => { render(); window.scrollTo({top:0}); });
 document.addEventListener('click', e => {
-  if (e.target.closest('#cat-btn, .bubble')){ catIdx = (catIdx+1) % catList.length; const t = document.getElementById('cat-text'); if (t) t.textContent = catList[catIdx]; return; }
+  if (e.target.closest('#cat-btn, .bubble')){ const t = document.getElementById('cat-text'); if (t) t.textContent = catSiguiente(); return; }
   const nav = e.target.closest('[data-cal]');
   if (nav){ const k = +nav.dataset.cal; calMonth = k===0 ? new Date(NOW.getFullYear(), NOW.getMonth(), 1) : new Date(calMonth.getFullYear(), calMonth.getMonth()+k, 1); if (k===0) calSel = isoD(NOW); render(); return; }
   const f = e.target.closest('[data-calf]'); if (f){ calFiltro = f.dataset.calf; render(); return; }

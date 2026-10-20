@@ -3,7 +3,7 @@
 // Cada ramo vive en su propio archivo (cbbdd.js, etica.js, cloud.js) y se agrega a DATA.ramos.
 window.DATA = {
   actualizado: '2026-10-20',
-  version: '0.1',   // versión de la página (no del contenido). Reglas en AGENTS.md
+  version: '0.2',   // versión de la página (no del contenido). Reglas en AGENTS.md
   hoySimulado: null,
   bimestre: {nombre: 'Bimestre 4', inicio: '2026-10-19', semanas: 9},
   ramos: [],
@@ -141,18 +141,13 @@ window.DATA = {
   ],
   gata: {
     general: [
-      '¡Wena, compa! ¿Y la sumativa pa cuándo?',
       'En mi máquina funciona.',
       '¿Ya hiciste commit hoy?',
-      'Ya po, sube esa weá al AVA.',
-      'Un commit al día y no te pillan, causa.',
-      'No te quedí pegao en TikTok, hermano.',
+      'Un commit al día y no te pillan.',
       'Si compila, estamos al otro lado.',
-      'Ctrl+S al toque, no seai gil.',
-      '¡Vamos con todo, mierda!',
-      'Erí más seco de lo que creí, oe.',
-      'Cachai que el profe lee el foro, ¿cierto?',
-      'Hidrátate y revisa el AVA, mi rey.',
+      'Ctrl+S a cada rato!.',
+      'Erí más seco de lo que crees!',
+      'Hidrátate y revisa el AVA, mi rey(na).',
     ],
     pronto: [
       'Oe, quedan {h} horas pa {e}. Suelta el celu.',

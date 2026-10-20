@@ -6,6 +6,7 @@ function vInicio(){
   const pct = Math.round((done + frac)/tot*100);
   const slots = Math.max(3, DATA.ramos.length);
   return `
+  <p class="bienvenida"><span class="bv-tab">~/bienvenida</span><b>¡Bienvenid@ a seman@_al_día!</b> Lo que viene cada semana en tus ramos, en un solo lugar. Hecha por estudiantes para Analista Programador Computacional online de Duoc UC, ingreso 2026. <a href="#readme">Readme</a> para saber más.</p>
   <section class="hero">
     ${catCard('inicio')}
     ${nd ? `<div class="cd-card"><div><span class="eyebrow">${entregasDelDia(nd).length > 1 ? 'Próximas entregas' : 'Próxima entrega'}</span><h2 style="margin-top:4px">${DOWL[nd.d.getDay()]} ${ddmm(nd.d)} · ${hhmm(nd.d)}</h2>
