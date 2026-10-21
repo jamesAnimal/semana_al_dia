@@ -1,5 +1,5 @@
 // seman@_al_día · pestañas, temas, clics y arranque. Se carga al final.
-const TABS = [['inicio','Inicio'], ['ramos','Ramos'], ['clases','Clases'], ['noticias','Noticias'], ['recursos','Recursos'], ['carrera','Carrera'], ['readme','Readme']];
+const TABS = [['inicio','Inicio'], ['ramos','Ramos'], ['clases','Clases'], ['noticias','Noticias'], ['recursos','Recursos'], ['carrera','Carrera'], ['certifika','Certifika'], ['readme','Readme']];
 const current = () => {
   const h = location.hash.slice(1);
   if (h.startsWith('ramos')){ const id = h.split('-')[1]; if (ramoById(id)) ramoSel = id; return 'ramos'; }
@@ -9,7 +9,7 @@ const current = () => {
 function render(){
   const tab = current();
   $('#tabs').innerHTML = TABS.map(([k,l],i) => `<a href="#${k}" ${k===tab?'aria-current="page"':''}><span class="wsn">${i+1}</span>${esc(l)}</a>`).join('');
-  $('#view').innerHTML = {inicio:vInicio, ramos:vRamos, clases:vClases, noticias:vNoticias, recursos:vRecursos, carrera:vCarrera, readme:vReadme}[tab]();
+  $('#view').innerHTML = {inicio:vInicio, ramos:vRamos, clases:vClases, noticias:vNoticias, recursos:vRecursos, carrera:vCarrera, readme:vReadme, certifika:vCertifika}[tab]();
 }
 $('#updated').textContent = 'Actualizado el ' + ddmm(dt(DATA.actualizado));
 if (DATA.version) $('#version').textContent = 'BETA v' + DATA.version;

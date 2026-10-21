@@ -65,12 +65,13 @@ DATA.ramos.push({
         entrega: '2026-10-26T23:59',
         descripcion: 'Cuestionario de selección única con situaciones del mundo profesional.',
         requisitos: [
-          'Revisar los recursos y lecturas de la semana en AVA.',
-          'Responder el cuestionario de selección única.',
+          'Revisa los recursos y lecturas de la semana: el cuestionario está al final del recorrido en el AVA.',
+          'Responde el cuestionario de selección única.',
           'Tienes 2 intentos de 60 minutos cada uno.',
+          'Al terminar, haz clic en "Finalizar" para que quede registrado.',
         ],
         entregables: [
-          {k: 'file', t: 'Cuestionario respondido en AVA'},
+          {k: 'file', t: 'Nada que subir: el cuestionario se responde directo en el AVA'},
         ],
         pauta: null,
       },

@@ -11,7 +11,7 @@ function vClases(){
   const lbl = (t, cls) => `<th class="lbl ${cls||''}" scope="row">${t}</th>`;
   const vacias = '<td class="marca"></td><td class="fx"></td><td class="fx"></td>';
   const fila = (t, cel, celRef, cls, rowCls) => `<tr class="${rowCls||''}">${vacias}${lbl(t, cls)}${cols.map(cel).join('')}${refs.map(celRef).join('')}</tr>`;
-  const refHora = x => { const t = x.ev.find(e => e.d > NOW) || x.ev[x.ev.length-1]; return t ? `${ddmm(t.d)}/${t.d.getFullYear()} ${hhmm(t.d)}` : '????'; };
+  const refHora = x => { const t = x.ev.find(e => e.d > NOW) || x.ev[x.ev.length-1]; return t ? `${ddmm(t.d)}/${t.d.getFullYear()}<br>${hhmm(t.d)}` : '????'; };
   const link = u => u ? `<a class="xl-lk" href="${esc(u)}" target="_blank" rel="noopener">Link</a>` : '????';
   const eft = (ramos.flatMap(r => r.evaluaciones).find(e => /EFT/.test(e.n) && e.entrega)||{}).entrega;
 
@@ -33,7 +33,7 @@ function vClases(){
   }).join('');
   const pie = `<tr class="eft"><td class="marca"></td><td colspan="3"></td><td colspan="${cols.length + refs.length}">EFT | ${eft ? 'Entrega máxima '+DOWL[dt(eft).getDay()].toLowerCase()+' '+ddmm(dt(eft))+'/'+dt(eft).getFullYear()+' '+hhmm(dt(eft)) : 'Fecha por confirmar'}</td></tr>`;
 
-  return `<h1>Clases</h1>
+  return `${pageHead('video', 'Clases', 'Horarios, links de cada profe, grabaciones y reforzamiento', 'r3')}
   <p class="aviso"><b aria-hidden="true">!</b><span>¿Vas a entrar a la clase de otro profe? Dale, pero con respeto: sin interrumpir, y las preguntas déjaselas primero a los de esa sección. Y si te pillan… no conoces esta página 🤫 XD</span><b aria-hidden="true">!</b></p>
   <div class="xl-wrap"><table class="xl"><colgroup><col class="c-marca"><col class="c-fecha"><col class="c-entrega"><col class="c-lbl"></colgroup><thead>${head}</thead><tbody>${body}${pie}</tbody></table></div>
   <p class="small muted">Fecha = cierre de las entregas de esa semana (23:59).</p>`;

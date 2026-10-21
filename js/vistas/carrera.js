@@ -5,7 +5,7 @@ function vCarrera(){
   const c = DATA.carrera, tot = c.bimestres.length, done = c.bimestres.filter(b => b.estado==='aprobado').length;
   const frac = CUR/DATA.bimestre.semanas, pct = Math.round((done + frac)/tot*100);
   const catLeft = ((done + frac) / tot) * 100;
-  return `<div class="panel-head"><h1>${esc(c.nombre||'Tu carrera')}</h1>${c.ejemplo?chip(null,'Malla de ejemplo'):''}</div>
+  return `${pageHead('grad', c.nombre||'Tu carrera', 'Avance de la carrera, bimestre a bimestre'+(c.ejemplo?' · malla de ejemplo':''), 'r1')}
   <section class="panel">
     <div class="road"><div class="catpin" style="left:calc(${catLeft}% )">${catSVG('cat')}</div><span class="flag" aria-hidden="true">🏁</span>
       <div class="road-line">${c.bimestres.map(b => `<div class="seg ${b.estado==='aprobado'?'done':b.estado==='cursando'?'cur':''}" ${b.estado==='cursando'?`style="--p:${Math.round(frac*100)}%"`:''}></div>`).join('')}</div>

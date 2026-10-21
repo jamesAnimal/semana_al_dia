@@ -10,11 +10,14 @@ function delCurso(){
   }
   return out;
 }
+// Color de cada mosaico según el tipo de link
+const tileColor = k => ({download:'accent', users:'r2', folder:'sun', github:'r1', video:'coral', arrow:'cyan'})[k] || 'accent';
+const tile = x => `<a class="tile" style="--tc:var(--${tileColor(x.k)})" href="${esc(x.u)}" target="_blank" rel="noopener"><span class="ti">${icon(x.k||'arrow')}</span>${esc(x.t)}</a>`;
 function vRecursos(){
-  return `<h1>Recursos</h1>
-  ${DATA.carpeta ? `<section class="panel"><div class="panel-head"><h2>Carpeta compartida</h2>${link('Abrir carpeta', DATA.carpeta.u, 'folder')}</div>
+  return `${pageHead('folder', 'Recursos', 'Links del curso, programas para instalar y talleres', 'sun')}
+  ${DATA.carpeta ? win('carpeta-compartida', 'sun', `<div class="panel-head"><h2>Carpeta compartida</h2>${link('Abrir carpeta', DATA.carpeta.u, 'folder')}</div>
     <p class="small"><b>Cómo entrar:</b> ${esc(DATA.carpeta.acceso)}</p>
-    <ul class="clean small">${DATA.carpeta.reglas.map(x => `<li>${esc(x)}</li>`).join('')}</ul></section>` : ''}
-  <section class="panel"><h2>Del curso</h2><div class="links">${delCurso().map(x => link(x.t, x.u, x.k)).join('')}</div></section>
-  <section class="panel"><h2>Talleres y cursos</h2><div class="agenda">${conLink(DATA.talleres).map(x => { const d = dt(x.fecha); return `<div class="ag"><span class="when"><b>${d.getDate()}</b><span>${MES[d.getMonth()].slice(0,3)}</span></span><span class="grow">${chip(null, x.tipo)}<br>${esc(x.t)}</span>${link('Abrir', x.u, 'video')}</div>`; }).join('')}</div></section>`;
+    <ul class="clean small">${DATA.carpeta.reglas.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`, 'folder') : ''}
+  ${win('del-curso', 'accent', `<div class="tiles">${delCurso().map(tile).join('')}</div>`, 'download')}
+  ${win('talleres-y-cursos', 'r2', `<div class="agenda">${conLink(DATA.talleres).map(x => { const d = dt(x.fecha); return `<div class="ag"><span class="when"><b>${d.getDate()}</b><span>${MES[d.getMonth()].slice(0,3)}</span></span><span class="grow">${chip(null, x.tipo)}<br>${esc(x.t)}</span>${link('Abrir', x.u, 'video')}</div>`; }).join('') || '<div class="empty">Sin talleres por ahora.</div>'}</div>`, 'wrench')}`;
 }

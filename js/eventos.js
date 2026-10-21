@@ -7,6 +7,8 @@ function allEvents(){
     const d = addDays(weekStart(w), x.dia-1); const [h,m] = x.hora.split(':').map(Number); d.setHours(h,m);
     ev.push({d, titulo:`${r.corto} ${s.profe.split(' ')[0]}`, ramo:r.id, tipo:'clase', profe:s.profe, seccion:s.seccion, link:s.link});
   }
+  // Clases de Certifika: salen en el calendario como un ramo más ('cert')
+  for (const k of (DATA.certifika||{}).cursos||[]) for (const x of [...k.clases, ...(k.proxima?[k.proxima]:[])]) ev.push({d:dt(x.fecha), titulo:`${k.corto} clase ${x.n||''}`.trim(), ramo:'cert', tipo:'clase', allDay:!x.fecha.includes('T'), link:x.link||null, profe:k.profe, seccion:'todas', puntual:true});
   for (const e of DATA.eventos) ev.push({d:dt(e.fecha), titulo:e.titulo, ramo:e.ramo||'gen', tipo:e.tipo, allDay:!e.fecha.includes('T'), link:e.link||null, profe:e.profe||'????', seccion:'todas', puntual:true});
   return ev.sort((a,b) => a.d-b.d);
 }

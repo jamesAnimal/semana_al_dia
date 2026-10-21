@@ -3,7 +3,7 @@
 // Cada ramo vive en su propio archivo (cbbdd.js, etica.js, cloud.js) y se agrega a DATA.ramos.
 window.DATA = {
   actualizado: '2026-10-20',
-  version: '0.3',   // versión de la página (no del contenido). Reglas en AGENTS.md
+  version: '0.4',   // versión de la página (no del contenido). Reglas en AGENTS.md
   hoySimulado: null,
   bimestre: {nombre: 'Bimestre 4', inicio: '2026-10-19', semanas: 9},
   ramos: [],
@@ -16,9 +16,9 @@ window.DATA = {
     {
       fecha: '2026-10-19',
       tag: 'Certificación',
-      ramo: 'gen',
+      ramo: 'cert',
       titulo: 'PCEP (Python): clase 2 el 19/10',
-      texto: 'Programa Certifika. Link de la clase y grabaciones en Recursos.',
+      texto: 'Programa Certifika. Clases y grabaciones en la pestaña Certifika.',
     },
     {
       fecha: '2026-10-19',
@@ -102,18 +102,6 @@ window.DATA = {
       tipo: 'Git / GitHub',
       t: 'Taller GitHub desde Cero · Parte 2 (grabación)',
       u: 'https://teams.microsoft.com/l/meetingrecap?driveId=b%21bsRJ1oUQ7kqNxWWu10Kxm_FZ1oU4Qn5Ngu9LcnMPe9xZuIlKhhXlRJ3PgQ6vFrOl&driveItemId=017E2UOVFBAETGWVLO6FC3K6YJNXHH4SLX&sitePath=https%3A%2F%2Fduoccl0-my.sharepoint.com%2F%3Av%3A%2Fg%2Fpersonal%2Fjnanjarim_duoc_cl%2FIQChASZrVW7xRbV7CW3Ofkl3AUAo4B-6MI7XYeLxCDHJ_ak&fileUrl=https%3A%2F%2Fduoccl0-my.sharepoint.com%2Fpersonal%2Fjnanjarim_duoc_cl%2FDocuments%2FGrabaciones%2FTaller+2+-+GitHub+desde+Cero+Colaboraci%C3%B3n%2C+Ramas+y+Pull+Requests-20260914_193040-Grabaci%C3%B3n+de+la+reuni%C3%B3n.mp4%3Fweb%3D1&iCalUid=040000008200E00074C5B7101A82E0080000000005202BE3173BDD0100000000000000001000000045631F5D104D3445B719B4A273CA9756&threadId=19%3Ameeting_OTI4YzI4MTktMmZhYS00ZWY2LTkwOWMtNjhiN2MxMTIzMGE0%40thread.v2&organizerId=509e7715-41ec-44d4-82ad-a8b61a6c0a8c&tenantId=72fd0b5a-8a6a-4cff-89f6-bde961f7e250&callId=dba39554-0757-4f06-8f0a-0ae0fce1ba87&threadType=Meeting&meetingType=Scheduled&subType=RecapSharingLink_RecapCore&recapType=RecordingAndTranscript',
-    },
-    {
-      fecha: '2026-10-05',
-      tipo: 'Python · PCEP',
-      t: 'Certifika Fundamentos de Python · Clase 1 (grabaciones)',
-      u: 'https://duoccl0-my.sharepoint.com/shared?listurl=https%3A%2F%2Fduoccl0%2Dmy%2Esharepoint%2Ecom%2Fpersonal%2Fcbarraa%5Fduoc%5Fcl%2FDocuments&id=%2Fpersonal%2Fcbarraa%5Fduoc%5Fcl%2FDocuments%2FEscuela%20Informatica%20y%20Telecomunicaciones%2FPrograma%20Certifika%2FCertifika%202026%2FPython%2FGrabaciones&shareLink=1&ga=1',
-    },
-    {
-      fecha: '2026-10-19',
-      tipo: 'Python · PCEP',
-      t: 'Certifika Fundamentos de Python · Clase 2',
-      u: 'https://us.bbcollab.com/guest/c2d268804549476ebf5c75d945bc3615',
     },
   ],
   carpeta: {

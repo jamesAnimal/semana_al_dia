@@ -23,6 +23,14 @@ DATA.ramos.push({
       hora: '22:00',
       link: 'https://us.bbcollab.com/guest/1b14ce788f564e3092bf7b49ccc785c0',
     },
+    {
+      // PENDIENTE: confirmar horario y link en el Excel o el AVA (vienen del grupo del curso)
+      profe: 'Álvaro Vallejos',
+      seccion: '007A',
+      dia: 4,
+      hora: '21:00',
+      link: 'https://us.bbcollab.com/guest/d7e3c83e338b4dde8676ee57605e5699',
+    },
   ],
   evaluaciones: [
     {sem: 1, n: 'Formativa 1', modo: 'Individual', entrega: '2026-10-26T23:59'},
@@ -90,12 +98,13 @@ DATA.ramos.push({
         entrega: '2026-10-26T23:59',
         descripcion: 'Cuestionario para reconocer los componentes de un sistema informático, sus funciones y su relación con la nube. No lleva nota, pero prepara para la sumativa de la semana 2.',
         requisitos: [
+          'El cuestionario está al final del recorrido de la semana en el AVA.',
           'Revisar la guía y los materiales de la semana en AVA.',
           'Responder el cuestionario: 2 intentos de 30 minutos cada uno.',
           'Al terminar, hacer clic en Finalizar para que quede registrado.',
         ],
         entregables: [
-          {k: 'file', t: 'Cuestionario en AVA'},
+          {k: 'file', t: 'Nada que subir: el cuestionario se responde directo en el AVA'},
         ],
         pauta: null,
       },

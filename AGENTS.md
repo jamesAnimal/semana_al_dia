@@ -29,13 +29,14 @@ js/                 lógica. Un archivo por tema, se cargan en el orden de index
   mascota.js          la mascota y sus frases
   componentes.js      chips, links y alertas que usan varias vistas
   calendario.js       calendario chico del inicio
-  vistas/<pestaña>.js una vista por pestaña (inicio, ramos, clases, noticias, recursos, carrera, readme)
+  vistas/<pestaña>.js una vista por pestaña (inicio, ramos, clases, noticias, recursos, carrera, readme, certifika)
   app.js              pestañas, temas, clics y arranque (va al final)
 assets/mascota.webp la mascota (pájaro azul con polerón "it works on my machine").
 data/general.js     bimestre, feriados, noticias generales, recursos, software, talleres, malla, frases de la mascota.
 data/cbbdd.js       ramo r1 · Consulta de Bases de Datos
 data/etica.js       ramo r2 · Ética para el Trabajo
 data/cloud.js       ramo r3 · Introducción al Cloud Computing
+data/certifika.js   programa Certifika: qué es, certificaciones en curso con sus clases, y catálogo
 ```
 
 - `data/general.js` crea `window.DATA`. Cada archivo de ramo hace `DATA.ramos.push({...})` con todo lo del ramo: `secciones`, `evaluaciones`, `recursos`, `conceptos`, `semanas`, `eventos` y `noticias`.
@@ -56,6 +57,7 @@ data/cloud.js       ramo r3 · Introducción al Cloud Computing
 - `experiencias`: solo la experiencia en curso, con el nombre que trae el AVA. Se cambia cuando empieza la siguiente.
 - `modo` (en `evaluaciones` y `actividad`): `'Individual'` o `'Grupal'`. Sale como etiqueta junto a cada entrega.
 - `recursos` sin link (`u: null`) se guardan igual, pero no salen en la pestaña Recursos.
+- Certifika (`data/certifika.js`): cada certificación en curso va en `cursos`, con `clases: [{n, fecha, link, grabacion}]` y `proxima: {n, fecha, link}` o `null`. Sus clases salen solas en el calendario (color `--cert`).
 - `semanas: {1: {tema, resumen: [...], actividad: {...}, profe: [...], alertas: [...], clases: []}}`.
 - `actividad.pauta`: `[['criterio', puntos], ...]` o `null` si no se conoce.
 - `hoySimulado` en `data/general.js` debe quedar en `null` (solo se usa para probar).
