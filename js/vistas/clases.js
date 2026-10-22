@@ -28,7 +28,7 @@ function vClases(){
     const evs = ramos.map(r => r.evaluaciones.find(e => e.sem===w)), tipos = evs.map(evTipo);
     const entrega = ramos.map((r,i) => `<span class="xl-ev"><b style="color:var(--${r.id})">${esc(r.corto.split(' ').pop())}:</b> ${tipos[i]==='?' ? '????' : esc(tipos[i])}</span>`).join('');
     const grab = c => { const u = (c.sc.grabaciones||{})[w]; return `<td>${u ? `<a class="xl-lk" href="${esc(u)}" target="_blank" rel="noopener">Grabación</a>` : ''}</td>`; };
-    const taller = x => { const t = x.ev.find(e => weekOf(e.d)===w); return `<td class="${t?'hay':''}">${t ? `<a class="xl-lk" href="${esc(t.link||'#')}" target="_blank" rel="noopener">${esc(t.titulo.replace(' '+x.r.corto, ''))}</a><small>${ddmm(t.d)} · ${hhmm(t.d)}</small>` : ''}</td>`; };
+    const taller = x => { const t = x.ev.find(e => weekOf(e.d)===w); return `<td class="${t?'hay':''}">${t ? `${t.link ? `<a class="xl-lk" href="${esc(t.link)}" target="_blank" rel="noopener">${esc(t.titulo.replace(' '+x.r.corto, ''))}</a>` : `<b>${esc(t.titulo.replace(' '+x.r.corto, ''))}</b>`}<small>${ddmm(t.d)} · ${hhmm(t.d)}</small>` : ''}</td>`; };
     return `<tr class="${w===CUR?'cur':''}"><td class="marca">${w===CUR?'<span>Semana actual</span>':''}</td><td class="fx">${fecha ? ddmm(dt(fecha)) : '????'}</td><td class="fx">${entrega}</td>${lbl('Semana '+w)}${cols.map(grab).join('')}${refs.map(taller).join('')}</tr>`;
   }).join('');
   const pie = `<tr class="eft"><td class="marca"></td><td colspan="3"></td><td colspan="${cols.length + refs.length}">EFT | ${eft ? 'Entrega máxima '+DOWL[dt(eft).getDay()].toLowerCase()+' '+ddmm(dt(eft))+'/'+dt(eft).getFullYear()+' '+hhmm(dt(eft)) : 'Fecha por confirmar'}</td></tr>`;

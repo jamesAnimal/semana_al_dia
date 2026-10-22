@@ -12,7 +12,7 @@ DATA.ramos.push({
       profe: 'José Colmenarez',
       seccion: '005A',
       dia: 3,
-      hora: '21:00',
+      hora: '20:00',   // el Excel del curso dice 21:00; 20:00 según el curso
       link: 'https://us.bbcollab.com/guest/42e625a421324b26b11ef91112576498',
     },
     {

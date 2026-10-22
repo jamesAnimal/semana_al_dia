@@ -111,8 +111,11 @@ DATA.ramos.push({
       clases: [],
     },
   },
-  // PENDIENTE: talleres de reforzamiento con Eithel (fechas en CalendarioReforzamientos.jpg del anuncio 1)
   eventos: [
+    // Talleres de reforzamiento (calendario del anuncio 1), de 19:00 a 21:00
+    {fecha: '2026-10-30T19:00', titulo: 'Taller N°1 CBBDD', ramo: 'r1', tipo: 'clase', profe: 'Eithel González', link: null},   // PENDIENTE: link
+    {fecha: '2026-11-20T19:00', titulo: 'Taller N°2 CBBDD', ramo: 'r1', tipo: 'clase', profe: 'Eithel González', link: null},   // PENDIENTE: link
+    {fecha: '2026-12-11T19:00', titulo: 'Taller N°3 CBBDD', ramo: 'r1', tipo: 'clase', profe: 'Eithel González', link: null},   // PENDIENTE: link
     // Mismas fechas de cierre para todos los ramos (las pone el sistema). Tipo de evaluación: ????
     {fecha: '2026-10-26T23:59', titulo: 'Formativa CBBDD S1', ramo: 'r1', tipo: 'entrega'},
     {fecha: '2026-11-02T23:59', titulo: 'Entrega CBBDD S2', ramo: 'r1', tipo: 'entrega'},
@@ -136,7 +139,7 @@ DATA.ramos.push({
       tag: 'Taller',
       ramo: 'r1',
       titulo: 'Talleres de reforzamiento de CBBDD',
-      texto: 'Los dicta Eithel González para preparar sumativas y EFT. Calendario: ????',
+      texto: 'Con Eithel González, viernes 30/10, 20/11 y 11/12, de 19:00 a 21:00.',
     },
     {
       fecha: '2026-10-19',
