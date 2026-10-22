@@ -24,12 +24,12 @@ DATA.ramos.push({
       link: 'https://us.bbcollab.com/guest/1b14ce788f564e3092bf7b49ccc785c0',
     },
     {
-      // PENDIENTE: confirmar horario y link en el Excel o el AVA (vienen del grupo del curso)
+      // PENDIENTE: link de alumno (el que circuló era de profesor) y confirmar horario
       profe: 'Álvaro Vallejos',
       seccion: '007A',
       dia: 4,
       hora: '21:00',
-      link: 'https://us.bbcollab.com/guest/d7e3c83e338b4dde8676ee57605e5699',
+      link: null,
     },
   ],
   evaluaciones: [
