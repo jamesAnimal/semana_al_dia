@@ -9,19 +9,21 @@ DATA.ramos.push({
   icono: 'cloud',
   secciones: [
     {
-      profe: 'Danny Friz',
-      seccion: '005A',
-      dia: 4,
-      hora: '21:00',
-      link: 'https://us.bbcollab.com/guest/ae81f116e1664f89b6e786c9f7aaa6ca',
-      excepciones: {'1': {dia: 3, hora: '22:00'}},
-    },
-    {
       profe: 'Ignacio Pastenet',
       seccion: '003A',
       dia: 2,
       hora: '22:00',
       link: 'https://us.bbcollab.com/guest/1b14ce788f564e3092bf7b49ccc785c0',
+      grabaciones: {1: 'https://us-lti.bbcollab.com/recording/62e3191342914254a29a808b3cfc5a43'},
+    },
+    {
+      profe: 'Danny Friz',
+      seccion: '005A',
+      dia: 4,
+      hora: '21:00',
+      link: 'https://us.bbcollab.com/guest/ae81f116e1664f89b6e786c9f7aaa6ca',
+      grabaciones: {1: 'https://us-lti.bbcollab.com/recording/70c8e7f0ed804bfab349c0ed0cb1eb5b'},
+      excepciones: {'1': {dia: 3, hora: '22:00'}},
     },
     {
       // PENDIENTE: link de alumno (el que circuló era de profesor) y confirmar horario

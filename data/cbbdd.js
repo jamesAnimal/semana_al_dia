@@ -9,18 +9,12 @@ DATA.ramos.push({
   icono: 'db',
   secciones: [
     {
-      profe: 'Rodrigo Opazo',
-      seccion: '????',
-      dia: 4,
-      hora: '20:00',
-      link: 'https://us.bbcollab.com/collab/ui/session/guest/01f7192375ea433288a7fc8839d15dd0',
-    },
-    {
       profe: 'Eithel González',
       seccion: '005A',
       dia: 3,
       hora: '21:00',
       link: 'https://us.bbcollab.com/guest/0bfe64ff20bd4fee9440601c43c25a36',
+      grabaciones: {1: 'https://us-lti.bbcollab.com/recording/60fa823be3bc468b9eca1650f8da46a6'},
     },
     {
       profe: 'Lourdes Townsend (por ahora Eithel)',
@@ -28,6 +22,14 @@ DATA.ramos.push({
       dia: 3,
       hora: '21:00',
       link: 'https://us.bbcollab.com/guest/0bfe64ff20bd4fee9440601c43c25a36',
+      grabaciones: {1: 'https://us-lti.bbcollab.com/recording/60fa823be3bc468b9eca1650f8da46a6'},
+    },
+    {
+      profe: 'Rodrigo Opazo',
+      seccion: '????',
+      dia: 4,
+      hora: '20:00',
+      link: 'https://us.bbcollab.com/collab/ui/session/guest/01f7192375ea433288a7fc8839d15dd0',
     },
   ],
   evaluaciones: [
