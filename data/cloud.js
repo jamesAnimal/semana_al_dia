@@ -34,14 +34,14 @@ DATA.ramos.push({
   ],
   evaluaciones: [
     {sem: 1, n: 'Formativa 1', modo: 'Individual', entrega: '2026-10-26T23:59'},
-    {sem: 2, n: 'Sumativa 1', pond: '20%', entrega: '2026-11-02T23:59'},
-    {sem: 3, n: 'Formativa', entrega: '2026-11-09T23:59'},
-    {sem: 4, n: 'Formativa', entrega: '2026-11-16T23:59'},
-    {sem: 5, n: 'Sumativa 2', pond: '35%', entrega: '2026-11-23T23:59'},
-    {sem: 6, n: 'Formativa', entrega: '2026-11-30T23:59'},
-    {sem: 7, n: 'Formativa', entrega: '2026-12-07T23:59'},
-    {sem: 8, n: 'Sumativa 3', pond: '45%', entrega: '2026-12-14T23:59'},
-    {sem: 9, n: 'EFT · análisis de caso', pond: '40% nota final'},   // fecha del EFT: se agrega cuando se confirme
+    {sem: 2, n: 'Sumativa 1 (CP1)', pond: '20% (12% final)', entrega: '2026-11-02T23:59'},
+    {sem: 3, n: 'Formativa 2', entrega: '2026-11-09T23:59'},
+    {sem: 4, n: 'Formativa 3', entrega: '2026-11-16T23:59'},
+    {sem: 5, n: 'Sumativa 2 (CP2)', pond: '35% (21% final)', entrega: '2026-11-23T23:59'},
+    {sem: 6, n: 'Formativa 4', entrega: '2026-11-30T23:59'},
+    {sem: 7, n: 'Formativa 5', entrega: '2026-12-07T23:59'},
+    {sem: 8, n: 'Sumativa 3 (CP3)', pond: '45% (27% final)', entrega: '2026-12-14T23:59'},
+    {sem: 9, n: 'EFT · análisis de caso', pond: '40% nota final', entrega: '2026-12-20T23:59'},   // abre jue 10/12 (clase de Danny)
   ],
   // Solo la experiencia en curso, con el nombre del AVA. Se cambia cuando empieza la siguiente.
   experiencias: ['Exp. 1 (S1–S2): Relacionando componentes de los sistemas informáticos y su equivalente en la nube'],
@@ -127,12 +127,13 @@ DATA.ramos.push({
   eventos: [
     {fecha: '2026-10-26T23:59', titulo: 'Formativa Intro Cloud S1', ramo: 'r3', tipo: 'entrega'},
     {fecha: '2026-11-02T23:59', titulo: 'Sumativa 1 Intro Cloud (20%)', ramo: 'r3', tipo: 'entrega'},
-    {fecha: '2026-11-09T23:59', titulo: 'Formativa Intro Cloud S3', ramo: 'r3', tipo: 'entrega'},
-    {fecha: '2026-11-16T23:59', titulo: 'Formativa Intro Cloud S4', ramo: 'r3', tipo: 'entrega'},
+    {fecha: '2026-11-09T23:59', titulo: 'Formativa 2 Intro Cloud S3', ramo: 'r3', tipo: 'entrega'},
+    {fecha: '2026-11-16T23:59', titulo: 'Formativa 3 Intro Cloud S4', ramo: 'r3', tipo: 'entrega'},
     {fecha: '2026-11-23T23:59', titulo: 'Sumativa 2 Intro Cloud (35%)', ramo: 'r3', tipo: 'entrega'},
-    {fecha: '2026-11-30T23:59', titulo: 'Formativa Intro Cloud S6', ramo: 'r3', tipo: 'entrega'},
-    {fecha: '2026-12-07T23:59', titulo: 'Formativa Intro Cloud S7', ramo: 'r3', tipo: 'entrega'},
+    {fecha: '2026-11-30T23:59', titulo: 'Formativa 4 Intro Cloud S6', ramo: 'r3', tipo: 'entrega'},
+    {fecha: '2026-12-07T23:59', titulo: 'Formativa 5 Intro Cloud S7', ramo: 'r3', tipo: 'entrega'},
     {fecha: '2026-12-14T23:59', titulo: 'Sumativa 3 Intro Cloud (45%)', ramo: 'r3', tipo: 'entrega'},
+    {fecha: '2026-12-20T23:59', titulo: 'Cierre EFT Intro Cloud (abre jue 10/12)', ramo: 'r3', tipo: 'entrega'},
     {
       fecha: '2026-10-28T19:00',
       titulo: 'Taller N°1 Intro Cloud',
