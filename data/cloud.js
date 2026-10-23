@@ -26,12 +26,11 @@ DATA.ramos.push({
       excepciones: {'1': {dia: 3, hora: '22:00'}},
     },
     {
-      // PENDIENTE: link de alumno (el que circuló era de profesor) y confirmar horario
       profe: 'Álvaro Vallejos',
       seccion: '007A',
       dia: 4,
       hora: '21:00',
-      link: null,
+      link: 'https://us.bbcollab.com/guest/9d8f6e1be09a45a497273c76299b3219',
     },
   ],
   evaluaciones: [

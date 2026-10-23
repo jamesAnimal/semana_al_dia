@@ -21,6 +21,7 @@ DATA.ramos.push({
       dia: 4,
       hora: '19:00',
       link: 'https://us.bbcollab.com/guest/cf26cca4e09240a5bfea2dfd2d1c0e23',
+      grabaciones: {1: 'https://us-lti.bbcollab.com/recording/e5f21315007a47c792f254cd1974e11d'},
     },
   ],
   evaluaciones: [
