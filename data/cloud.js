@@ -35,14 +35,14 @@ DATA.ramos.push({
   ],
   evaluaciones: [
     {sem: 1, n: 'Formativa 1', modo: 'Individual', entrega: '2026-10-26T23:59'},
-    {sem: 2, n: 'Sumativa 1 (CP1)', pond: '20% (12% final)', entrega: '2026-11-02T23:59'},
-    {sem: 3, n: 'Formativa 2', entrega: '2026-11-09T23:59'},
-    {sem: 4, n: 'Formativa 3', entrega: '2026-11-16T23:59'},
-    {sem: 5, n: 'Sumativa 2 (CP2)', pond: '35% (21% final)', entrega: '2026-11-23T23:59'},
-    {sem: 6, n: 'Formativa 4', entrega: '2026-11-30T23:59'},
-    {sem: 7, n: 'Formativa 5', entrega: '2026-12-07T23:59'},
-    {sem: 8, n: 'Sumativa 3 (CP3)', pond: '45% (27% final)', entrega: '2026-12-14T23:59'},
-    {sem: 9, n: 'EFT · análisis de caso', pond: '40% nota final', entrega: '2026-12-20T23:59'},   // abre jue 10/12 (clase de Danny)
+    {sem: 2, n: 'Sumativa 1 (CP1)', modo: 'Individual', pond: '20% (12% final)', entrega: '2026-11-02T23:59'},
+    {sem: 3, n: 'Formativa 2', modo: 'Individual', entrega: '2026-11-09T23:59'},
+    {sem: 4, n: 'Formativa 3', modo: 'Individual', entrega: '2026-11-16T23:59'},
+    {sem: 5, n: 'Sumativa 2 (CP2)', modo: 'Individual', pond: '35% (21% final)', entrega: '2026-11-23T23:59'},
+    {sem: 6, n: 'Formativa 4', modo: 'Individual', entrega: '2026-11-30T23:59'},
+    {sem: 7, n: 'Formativa 5', modo: 'Individual', entrega: '2026-12-07T23:59'},
+    {sem: 8, n: 'Sumativa 3 (CP3)', modo: 'Individual', pond: '45% (27% final)', entrega: '2026-12-14T23:59'},
+    {sem: 9, n: 'EFT · análisis de caso', modo: 'Individual', pond: '40% nota final', entrega: '2026-12-20T23:59'},   // abre jue 10/12 (clase de Danny)
   ],
   // Solo la experiencia en curso, con el nombre del AVA. Se cambia cuando empieza la siguiente.
   experiencias: ['Exp. 1 (S1–S2): Relacionando componentes de los sistemas informáticos y su equivalente en la nube'],
@@ -111,6 +111,9 @@ DATA.ramos.push({
       },
       profe: [
         'Primera sesión: martes 20/10 a las 22:00 con Ignacio Pastenet.',
+        'AWS Academy: acepta la invitación que llega a tu correo Duoc (revisa spam) y entra a awsacademy.instructure.com.',
+        'Los laboratorios se abren desde Learner Lab: Start Lab y luego AWS. No necesitas cuenta personal de AWS ni tarjeta.',
+        'Detén los recursos que no estés usando: los laboratorios tienen presupuesto limitado.',
         'Con Danny Friz, la clase de la semana 1 es el miércoles a las 22:00 (no el jueves).',
         'Ojo: la semana 2 ya es Sumativa (20%), del 27/10 al 02/11.',
         'Marca como completados los recursos del AVA para ver tu avance.',
@@ -161,6 +164,13 @@ DATA.ramos.push({
     },
   ],
   noticias: [
+    {
+      fecha: '2026-10-23',
+      tag: 'Herramientas',
+      ramo: 'r3',
+      titulo: 'Ya puedes entrar a AWS Academy',
+      texto: 'Acepta la invitación en tu correo Duoc y entra a awsacademy.instructure.com. Esta semana: verificar el acceso y ver el video de la semana (acceso y creación de una EC2). Sin tarjeta ni cuenta personal de AWS.',
+    },
     {
       fecha: '2026-10-20',
       tag: 'Evaluación',
